@@ -1,15 +1,17 @@
 #controls{
     width: 100%;
     margin: 0 auto;
-    height: 150px;
+    height: 100px;
     padding: 20px;
-    border: 4px solid #555555;
+    border-top: 4px solid #555555;
+    border-bottom: 4px solid #555555;
+    background-color: lightgrey;
 }
 
 .sketch-control-selector {
     display: inline-block;
     margin-right: 20px;
-    width: 150px;
+    width: 210px;
     height: 100px;
     text-align: center;
     cursor: hand;
