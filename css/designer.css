@@ -31,3 +31,8 @@
     padding: 20px;
     cursor: pointer;
 }
+
+.sub-header {
+    padding-left: 20px;
+    padding-right: 20px;
+}

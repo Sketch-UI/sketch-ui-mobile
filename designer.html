@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Sketch-UI - Bootstrap</title>
+    <title>Sketch-UI Mockup Designer</title>
 
     <link href="css/designer.css" rel="stylesheet">
     <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
@@ -13,18 +13,22 @@
 <body>
 <div class="row-fluid" id="controlBox">
     <div class="row-fluid">
-        <div class="span12 text-center">
+        <div class="span8 offset2 text-center">
             <h1>sketchUI Mockup Designer</h1>
             <h4>Click on a control to add it to preview screen and then drag it</h4>
+        </div>
+        <div class="span2" style="padding: 10px">
+            <a href="https://github.com/inderps/sketch-ui" target="_blank" class="btn btn-primary btn-large">View on Github</a>
         </div>
     </div>
     <div class="row-fluid">
         <div class="span12">
             <div id="controls">
                 <div class="sketch-control-selector" data-template-id="titlebar1-template">
-                    <div class="well">
-                        <h5>Horizontal Navigation</h5>
-                    </div>
+                   <h5>Horizontal Menu</h5>
+                </div>
+                <div class="sketch-control-selector" data-template-id="container-template">
+                    <h5>Container</h5>
                 </div>
                 <div class="sketch-control-selector" data-template-id="button1-template">
                     <a class="btn" href="#">Button</a>
@@ -59,8 +63,9 @@
             </div>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="span11">
+    <div class="row-fluid" style="border-bottom: 5px solid #555555">
+        <div class="span12 sub-header">
+            <h3 class="pull-left">PREVIEW SCREEN</h3>
             <h5 class="pull-right">Press ENTER key to show/hide Controls Box</h5>
         </div>
     </div>
@@ -377,6 +382,29 @@
         <fieldset>
             <label>Text</label>
             <input type="text" name="text" value="{{properties.text}}">
+        </fieldset>
+    </div>
+</script>
+
+
+<script type="text/mustache" id="container-template">
+    <div class="control" id="control{{id}}" data-properties-template-id="container-properties-template" data-id="{{id}}">
+        <div class="well" style="width: {{properties.width}}{{^properties}}300{{/properties}}px; height: {{properties.height}}{{^properties}}300{{/properties}}px"></div>
+    </div>
+</script>
+<script type="text/mustache" id="container-properties-template">
+    <input type="hidden" name="controlTemplateID" value="container-template">
+    <input type="hidden" name="controlID" value="{{id}}">
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Height</label>
+            <input type="text" name="height" value="{{properties.height}}">
+        </fieldset>
+    </div>
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Width</label>
+            <input type="text" name="width" value="{{properties.width}}">
         </fieldset>
     </div>
 </script>

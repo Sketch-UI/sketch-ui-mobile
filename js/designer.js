@@ -3,7 +3,7 @@ $(document).ready(function(){
     var controlProperties = [];
 
     $("#control-properties-modal").draggable();
-    $("#control-properties-modal").css({'top': 120, 'left' : 900})
+    $("#control-properties-modal").css({'top': 120, 'left' : 900});
 
     $("#controls").mCustomScrollbar({
         horizontalScroll:true
@@ -24,7 +24,7 @@ $(document).ready(function(){
         var properties = Mustache.to_html($("#" + propertiesTemplateID).text(), {id: globalControlID, properties: controlProperties[globalControlID]});
         $("#model-properties-placeholder").html(properties);
 
-        $(".draggable").draggable();
+        $("#control" + globalControlID).parent(".draggable").draggable();
         $("#control-properties-modal").show();
     });
 
