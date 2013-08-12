@@ -10,6 +10,8 @@ $(document).ready(function(){
     });
 
     $(".sketch-control-selector").click(function(event){
+        event.preventDefault();
+
         var element = $(event.currentTarget);
 
         globalControlID = globalControlID + 1;

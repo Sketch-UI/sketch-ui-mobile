@@ -15,7 +15,7 @@
     <div class="row-fluid">
         <div class="span12 text-center">
             <h1>sketchUI Mockup Designer</h1>
-            <h4>Click on a control to add it to preview screen</h4>
+            <h4>Click on a control to add it to preview screen and then drag it</h4>
         </div>
     </div>
     <div class="row-fluid">
@@ -37,6 +37,24 @@
                 </div>
                 <div class="sketch-control-selector" data-template-id="button4-template">
                     <a class="btn btn-large btn-primary" href="#">Big Button</a>
+                </div>
+                <div class="sketch-control-selector" data-template-id="headings-template">
+                     <h1>Headings</h1>
+                </div>
+                <div class="sketch-control-selector" data-template-id="paragraph-template">
+                     <p>Paragraph / Label</p>
+                </div>
+                <div class="sketch-control-selector" data-template-id="textfield-template">
+                    <input type="text" class="input-medium" placeholder="Textfield">
+                </div>
+                <div class="sketch-control-selector" data-template-id="select-template">
+                    <a href="#">Dropdown</a>
+                </div>
+                <div class="sketch-control-selector" data-template-id="multiselect-template">
+                    <a href="#">Multi Dropdown</a>
+                </div>
+                <div class="sketch-control-selector" data-template-id="textarea-template">
+                    <textarea class="input-xlarge" id="textarea" rows="3">textarea</textarea>
                 </div>
             </div>
         </div>
@@ -224,6 +242,141 @@
         <fieldset>
             <label>Button Link</label>
             <input type="text" name="link" value="{{properties.link}}">
+        </fieldset>
+    </div>
+</script>
+
+<script type="text/mustache" id="headings-template">
+    <div class="control" id="control{{id}}" data-properties-template-id="headings-properties-template" data-id="{{id}}">
+        <{{properties.headings}}{{^properties}}h1{{/properties}}>{{properties.text}}{{^properties}}Headings 1{{/properties}}</{{properties.headings}}{{^properties}}h1{{/properties}}>
+    </div>
+</script>
+<script type="text/mustache" id="headings-properties-template">
+    <input type="hidden" name="controlTemplateID" value="headings-template">
+    <input type="hidden" name="controlID" value="{{id}}">
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Heading Size</label>
+            <select name="headings">
+                 <option value="h1">H1</option>
+                 <option value="h2">H2</option>
+                 <option value="h3">H3</option>
+                 <option value="h4">H4</option>
+                 <option value="h5">H5</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label>Text</label>
+            <input type="text" name="text" value="{{properties.text}}">
+        </fieldset>
+    </div>
+</script>
+
+<script type="text/mustache" id="paragraph-template">
+    <div class="control" id="control{{id}}" data-properties-template-id="paragraph-properties-template" data-id="{{id}}">
+        <div style="width: 400px; height: 400px">
+            <p>{{properties.text}}{{^properties}}Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.{{/properties}}</p>
+        </div>
+    </div>
+</script>
+<script type="text/mustache" id="paragraph-properties-template">
+    <input type="hidden" name="controlTemplateID" value="paragraph-template">
+    <input type="hidden" name="controlID" value="{{id}}">
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Text</label>
+            <textarea name="text"> {{properties.text}}</textarea>
+        </fieldset>
+    </div>
+</script>
+
+
+<script type="text/mustache" id="textfield-template">
+    <div class="control" id="control{{id}}" data-properties-template-id="textfield-properties-template" data-id="{{id}}">
+        <input type="text" class="input-medium" placeholder="{{properties.text}}{{^properties}}textfield{{/properties}}">
+    </div>
+</script>
+<script type="text/mustache" id="textfield-properties-template">
+    <input type="hidden" name="controlTemplateID" value="textfield-template">
+    <input type="hidden" name="controlID" value="{{id}}">
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Inline Text</label>
+            <input type="text" name="text" value="{{properties.text}}">
+        </fieldset>
+    </div>
+</script>
+
+<script type="text/mustache" id="select-template">
+    <div class="control" id="control{{id}}" data-properties-template-id="select-properties-template" data-id="{{id}}">
+        <select id="select01">
+            <option>{{properties.option1}}{{^properties}}Option1{{/properties}}</option>
+            <option>{{properties.option2}}{{^properties}}Option2{{/properties}}</option>
+            <option>{{properties.option3}}{{^properties}}Option3{{/properties}}</option>
+        </select>
+    </div>
+</script>
+<script type="text/mustache" id="select-properties-template">
+    <input type="hidden" name="controlTemplateID" value="select-template">
+    <input type="hidden" name="controlID" value="{{id}}">
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Option 1</label>
+            <input type="text" name="option1" value="{{properties.option1}}">
+        </fieldset>
+        <fieldset>
+            <label>Option 2</label>
+            <input type="text" name="option2" value="{{properties.option2}}">
+        </fieldset>
+        <fieldset>
+            <label>Option 3</label>
+            <input type="text" name="option3" value="{{properties.option3}}">
+        </fieldset>
+    </div>
+</script>
+
+
+<script type="text/mustache" id="multiselect-template">
+    <div class="control" id="control{{id}}" data-properties-template-id="multiselect-properties-template" data-id="{{id}}">
+        <select id="select01" multiple="multiple">
+            <option>{{properties.option1}}{{^properties}}Option1{{/properties}}</option>
+            <option>{{properties.option2}}{{^properties}}Option2{{/properties}}</option>
+            <option>{{properties.option3}}{{^properties}}Option3{{/properties}}</option>
+        </select>
+    </div>
+</script>
+<script type="text/mustache" id="multiselect-properties-template">
+    <input type="hidden" name="controlTemplateID" value="multiselect-template">
+    <input type="hidden" name="controlID" value="{{id}}">
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Option 1</label>
+            <input type="text" name="option1" value="{{properties.option1}}">
+        </fieldset>
+        <fieldset>
+            <label>Option 2</label>
+            <input type="text" name="option2" value="{{properties.option2}}">
+        </fieldset>
+        <fieldset>
+            <label>Option 3</label>
+            <input type="text" name="option3" value="{{properties.option3}}">
+        </fieldset>
+    </div>
+</script>
+
+
+<script type="text/mustache" id="textarea-template">
+    <div class="control" id="control{{id}}" data-properties-template-id="textarea-properties-template" data-id="{{id}}">
+        <textarea class="input-xlarge" id="textarea" rows="3">{{properties.text}}{{^properties}}{{/properties}}</textarea>
+    </div>
+</script>
+<script type="text/mustache" id="textarea-properties-template">
+    <input type="hidden" name="controlTemplateID" value="textarea-template">
+    <input type="hidden" name="controlID" value="{{id}}">
+    <div class="properties" data-control-id="{{id}}">
+        <fieldset>
+            <label>Text</label>
+            <input type="text" name="text" value="{{properties.text}}">
         </fieldset>
     </div>
 </script>
