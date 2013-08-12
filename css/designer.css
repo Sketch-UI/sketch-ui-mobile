@@ -1,0 +1,26 @@
+#controls{
+    width: 100%;
+    margin: 0 auto;
+    height: 150px;
+    padding: 20px;
+    border: 4px solid #555555;
+}
+
+.sketch-control-selector {
+    display: inline-block;
+    margin-right: 20px;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    cursor: hand;
+}
+
+#control-properties-modal {
+    width: 300px;
+    text-align: left;
+    background: #ffffff;
+    color: #555555;
+    position: absolute;
+    border: 4px solid #555555;
+    padding: 20px;
+}
