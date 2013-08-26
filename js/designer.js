@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     var globalControlID = 1;
     var controlProperties = [];
 
@@ -62,9 +62,24 @@ $(document).ready(function(){
         $("#control-properties-modal").hide();
     });
 
+    var fullScreenToggle = function(event) {
+        event.preventDefault();
+        var fullScreenBarHeight = $("content").css("margin-top") == "0px" ? "60px" : 0;
+        $("#header").toggle();
+        $("#full-screen-bar").toggle();
+        $("#title-bar").toggle();
+        $("#content").css("margin-top", fullScreenBarHeight)
+    }
+
     $("body").keypress(function(event) {
-       if(event.which == 13){
-           $("#controlBox").toggle();
-       }
+        if (event.which == 13) {
+            fullScreenToggle(event);
+        }
     });
+
+    $(".full-screen-icon").click(function(event) {
+        fullScreenToggle(event);
+    });
+
+
 });
