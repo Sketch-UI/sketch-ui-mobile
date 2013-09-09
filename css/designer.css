@@ -3,7 +3,7 @@
     height: 86px;
     padding-top: 9px;
     border-bottom: 2px solid #555555;
-    background-color: rgba(61, 61, 61, 0.36);
+    background-color: rgb(180, 180, 180);
 }
 
 #controls-wrapper {
@@ -40,6 +40,15 @@
 .control {
     padding: 20px;
     cursor: pointer;
+    display: inline-block;
+}
+
+#header{
+    /*background-color: rgba(77, 113, 30, 1);*/
+    position: relative;
+    height: 160px;
+    z-index: 1;
+
 }
 
 .sub-header {
@@ -52,7 +61,7 @@
     padding-right: 20px;
     color: rgba(0, 0, 0, .5);
     font-size: 30px;
-
+    z-index: 10;
 }
 
 #full-screen-bar {
@@ -79,7 +88,7 @@
     top: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 0);
-    z-index: 10;
+    z-index: -1;
     height: 60px;
 }
 
@@ -87,7 +96,7 @@
     width: 100%;
     z-index: 10;
     border-bottom: solid 3px #bbb;
-    background: rgba(204, 204, 204, .2);
+    background: rgb(243, 243, 243);
     display: block;
     height: 60px;
     line-height: 20px;
@@ -107,4 +116,12 @@
 
 .invisible {
     display: none;
+}
+
+#content {
+
+}
+
+.component-wrapper{
+    display: inline-block;
 }

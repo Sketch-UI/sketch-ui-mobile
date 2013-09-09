@@ -5,10 +5,9 @@
     <title>Sketch-UI Mockup Designer</title>
 
     <link href="css/designer.css" rel="stylesheet">
-    <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/jquery/jquery.mCustomScrollbar.css" rel="stylesheet">
 </head>
 <body>
 
@@ -99,15 +98,15 @@
     </div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/mustache.js"></script>
+<script src="js/jquery/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/mustache/mustache.js"></script>
 <script src="js/designer.js"></script>
-<script src="js/jquery.serializeJSON.js"></script>
+<script src="js/jquery/jquery.serializeJSON.js"></script>
 <script type="text/mustache" id="titlebar1-template">
     <div class="control" id="control{{id}}" data-properties-template-id="titlebar1-properties-template"
-         data-id="{{id}}">
+         data-id="{{id}}" style="display: inline">
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container" style="width: auto;">
@@ -250,7 +249,7 @@
 
 
 <script type="text/mustache" id="button4-template">
-    <div class="control" id="control{{id}}" data-properties-template-id="button4-properties-template"
+    <div class="control draggable" id="control{{id}}" data-properties-template-id="button4-properties-template"
          data-id="{{id}}">
         <a class="btn btn-large btn-primary" href="{{properties.link}}{{^properties}}#link{{/properties}}">{{properties.label}}{{^properties}}Button{{/properties}}</a>
     </div>

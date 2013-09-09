@@ -18,13 +18,15 @@ $(document).ready(function() {
         controlProperties[globalControlID] = {};
 
         var html = Mustache.to_html($("#" + element.attr("data-template-id")).text(), {id: globalControlID});
-         $("#content").append("<div class='draggable'>" + html + "</div>");
+         $("#content").append("<div class='component-wrapper draggable'>" + html + "</div>");
 
         var propertiesTemplateID = $("#control" + globalControlID).attr("data-properties-template-id");
         var properties = Mustache.to_html($("#" + propertiesTemplateID).text(), {id: globalControlID, properties: controlProperties[globalControlID]});
         $("#model-properties-placeholder").html(properties);
 
-        $("#control" + globalControlID).parent(".draggable").draggable();
+        $("#control" + globalControlID).parent(".draggable").draggable({
+//          containment: "parent"
+        });
         $("#control-properties-modal").show();
     });
 
@@ -64,11 +66,11 @@ $(document).ready(function() {
 
     var fullScreenToggle = function(event) {
         event.preventDefault();
-        var fullScreenBarHeight = $("content").css("margin-top") == "0px" ? "60px" : 0;
+//        var fullScreenBarHeight = $("content").css("margin-top") == "0px" ? "60px" : 0;
         $("#header").toggle();
         $("#full-screen-bar").toggle();
         $("#title-bar").toggle();
-        $("#content").css("margin-top", fullScreenBarHeight)
+//        $("#content").css("margin-top", fullScreenBarHeight)
     }
 
     $("body").keypress(function(event) {
