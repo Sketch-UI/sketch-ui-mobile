@@ -10,4 +10,17 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery/jquery.mCustomScrollbar.css
+ *= require no-theme/jquery-ui-1.10.3.custom.min.css
+ *= require bootstrap/bootstrap-responsive.min.css
+ *= require bootstrap/bootstrap.min.css
  */
+src: url("<%= asset_path('SchuboiseHandwrite.eot') %>");
+src: url("<%= asset_path('SchuboiseHandwrite.otf') %>");
+src: url("<%= asset_path('SchuboiseHandwrite.svg') %>");
+src: url("<%= asset_path('SchuboiseHandwrite.ttf') %>");
+src: url("<%= asset_path('SchuboiseHandwrite.woff') %>");
+src: url("<%= asset_path('typicons.woff') %>");
+src: url("<%= asset_path('typicons.eot') %>");
+src: url("<%= asset_path('typicons.svg') %>");
+src: url("<%= asset_path('typicons.ttf') %>");
