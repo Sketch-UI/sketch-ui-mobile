@@ -36,6 +36,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'brakeman'
   gem 'rake'
+  gem 'travis-lint'
 end
 
 group :test  do
