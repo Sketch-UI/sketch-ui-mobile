@@ -5,9 +5,8 @@
 //= require jquery/jquery.serializeJSON
 //= require bootstrap/bootstrap.min
 //= require Ractive/Ractive
-//= require lodash/lodash.compat
-//= require lodash/lodash
-//= require mustache/mustache
-//= require together-js/togetherjs-min
-//= require zepto/zepto
 //= require_tree .
+
+$(document).ready(function() {
+    DrawingBoard.init();
+});
