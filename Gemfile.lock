@@ -193,7 +193,6 @@ PLATFORMS
 
 DEPENDENCIES
   brakeman
-  coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl
   fuubar
