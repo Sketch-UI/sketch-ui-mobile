@@ -7,7 +7,7 @@ var Control = (function() {
         this.element = element;
         this.propertyWindow = PropertyWindow.activate(this.element);
         this.activateControl();
-
+        this.bindControl();
     };
 
     var activateControl = function(){
@@ -17,16 +17,24 @@ var Control = (function() {
            data: PropertyWindow.getData(),
            append: true
        });
-       new Draggabilly(this.controlTmpl.find(".control"));
     };
 
     var update = function(data){
         this.controlTmpl.set(data);
     };
 
+    var bindControl = function(){
+        var control = $("#drawing-board .control").last();
+        new Draggabilly(control[0]);
+        control.click(function(ev){
+            console.log("ss");
+        });
+    };
+
     return {
         create: create,
         activateControl: activateControl,
+        bindControl: bindControl,
         update: update
     };
 
