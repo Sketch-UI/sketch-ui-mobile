@@ -1,4 +1,5 @@
 var PropertyWindow = (function() {
+    var propertyTemplate = null;
 
     var init = function(){
         $('#property-window-link').sidr({
@@ -12,32 +13,23 @@ var PropertyWindow = (function() {
     var bindEvents = function(){
         var _this = this;
         $("#property-window").on( "change", ".property", function() {
-            Control.update(_this.getData());
+            Control.update(_this.propertyTemplate.get());
         });
     };
 
-    var activate = function(control) {
-        new Ractive({
+    var activate = function(template, data) {
+        this.propertyTemplate = new Ractive({
             el: "sidr-id-properties-container",
-            template: "#" + $(control).data("property-template")
+            template: "#" + template,
+            data: data
         });
         $.sidr('open', 'property-window');
     };
 
-    var getData = function(){
-        controlProperties = {};
-        $("#property-window .property").each(function(index, element){
-             controlProperties[$(element).attr("name")] = $(element).val();
-        });
-        return controlProperties;
-    };
-
-
     return {
         init: init,
         activate: activate,
-        bindEvents: bindEvents,
-        getData: getData
+        bindEvents: bindEvents
     };
 
 })();

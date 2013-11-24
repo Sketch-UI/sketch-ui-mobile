@@ -1,10 +1,13 @@
 var ButtonControl = (function() {
 
-    var init = function() {
+    var initialData = function() {
+        return {
+            button_label: "Submit"
+        }
     };
 
     return {
-        init: init
+        initialData: initialData
     };
 
 })();
