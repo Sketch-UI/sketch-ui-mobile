@@ -1,12 +1,18 @@
 var Toolbox = (function() {
 
     var init = function() {
+        $('#toolbox-link').sidr({
+            name: 'toolbox-left',
+            side: 'left',
+            source: '#toolbox-container'
+        });
         this.bindControls();
     };
 
     var bindControls = function() {
-       $("#toolbox a").click(function(ev){
+       $("#toolbox-left a").click(function(ev){
             Control.create(ev.currentTarget);
+           $.sidr('close', 'toolbox-left');
        });
     };
 

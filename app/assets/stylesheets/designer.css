@@ -7,37 +7,47 @@ body{
     position: relative;
 }
 
-#property-window {
-    position: relative;
-    width: 400px;
-    height: 100%;
-    background-color: #191818;
-    padding: 20px;
-    color: #ffffff;
+#sidr-id-properties-container {
+    padding: 15px;
 }
 
-#property-window > * {
-    position: relative;
+input.property, select.property, textarea.property {
+    height: 30px !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
-#property-window .handle {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
+/*#property-window {*/
+    /*position: relative;*/
+    /*width: 400px;*/
+    /*height: 100%;*/
+    /*background-color: #191818;*/
+    /*padding: 20px;*/
+    /*color: #ffffff;*/
+/*}*/
 
-#property-window .handle:hover {
-    background: #09F;
-}
+/*#property-window > * {*/
+    /*position: relative;*/
+/*}*/
+
+/*#property-window .handle {*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+
+/*#property-window .handle:hover {*/
+    /*background: #09F;*/
+/*}*/
 
 #drawing-board{
     width: 1200px;
     height: 1200px;
     box-shadow: 0 0 1em #333;
     background-color: #ffffff;
-    margin: 25px;
+    margin: 25px auto;
 }
 
 

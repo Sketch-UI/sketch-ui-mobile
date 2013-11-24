@@ -6,6 +6,7 @@
 //= require bootstrap/bootstrap.min
 //= require Ractive/Ractive
 //= require draggabilly/draggabilly
+//= require sidr/jquery.sidr.min
 //= require_tree .
 
 $(document).ready(function() {

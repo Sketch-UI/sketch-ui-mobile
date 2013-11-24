@@ -1,14 +1,12 @@
 var PropertyWindow = (function() {
-    var element = null;
 
     var init = function(){
-      this.element = $("#property-window");
+        $('#property-window-link').sidr({
+            name: 'property-window',
+            side: 'left',
+            source: '#property-window-container'
+        });
       this.bindEvents();
-      var draggie = new Draggabilly(this.element[0], {
-          handle: '.handle'
-      });
-
-      this.element.hide();
     };
 
     var bindEvents = function(){
@@ -19,11 +17,11 @@ var PropertyWindow = (function() {
     };
 
     var activate = function(control) {
-        this.element.show();
-        return new Ractive({
-            el: "property-window-container",
+        new Ractive({
+            el: "sidr-id-properties-container",
             template: "#" + $(control).data("property-template")
         });
+        $.sidr('open', 'property-window');
     };
 
     var getData = function(){

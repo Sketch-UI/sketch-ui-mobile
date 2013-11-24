@@ -14,7 +14,43 @@
  *= require no-theme/jquery-ui-1.10.3.custom.min.css
  *= require bootstrap/bootstrap-responsive.min.css
  *= require bootstrap/bootstrap.min.css
+ *= require sidr/jquery.sidr.dark.css
  */
+
+#header {
+    height: 50px;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+
+#header .branding{
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+#toolbox-link{
+    margin-top: 10px;
+    float: left;
+    margin-left: 20px;
+    color: #ffffff;
+    background: rgb(66, 184, 221);
+    border: none;
+    font-size: 15px;
+}
+
+#property-window-link{
+    margin-top: 10px;
+    float: right;
+    margin-right: 20px;
+    color: #ffffff;
+    background-color: #dd514c;
+    border: none;
+    font-size: 15px;
+}
+
 src: url("<%= asset_path('SchuboiseHandwrite.eot') %>");
 src: url("<%= asset_path('SchuboiseHandwrite.otf') %>");
 src: url("<%= asset_path('SchuboiseHandwrite.svg') %>");
@@ -24,3 +60,4 @@ src: url("<%= asset_path('typicons.woff') %>");
 src: url("<%= asset_path('typicons.eot') %>");
 src: url("<%= asset_path('typicons.svg') %>");
 src: url("<%= asset_path('typicons.ttf') %>");
+

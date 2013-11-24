@@ -17,6 +17,7 @@ var Control = (function() {
            data: PropertyWindow.getData(),
            append: true
        });
+       new Draggabilly(this.controlTmpl.find(".control"));
     };
 
     var update = function(data){
