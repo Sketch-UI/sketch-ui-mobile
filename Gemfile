@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'magic_encoding'
+gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
