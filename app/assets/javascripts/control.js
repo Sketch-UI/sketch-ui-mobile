@@ -14,7 +14,8 @@ var Control = (function() {
        this.controlTmpl = new Ractive({
            el: "drawing-board",
            template: "#" + $(this.element).data("control-template"),
-           data: PropertyWindow.getData()
+           data: PropertyWindow.getData(),
+           append: true
        });
     };
 

@@ -1,7 +1,14 @@
 var PropertyWindow = (function() {
+    var element = null;
 
     var init = function(){
+      this.element = $("#property-window");
       this.bindEvents();
+      var draggie = new Draggabilly(this.element[0], {
+          handle: '.handle'
+      });
+
+      this.element.hide();
     };
 
     var bindEvents = function(){
@@ -12,8 +19,9 @@ var PropertyWindow = (function() {
     };
 
     var activate = function(control) {
+        this.element.show();
         return new Ractive({
-            el: "property-window",
+            el: "property-window-container",
             template: "#" + $(control).data("property-template")
         });
     };

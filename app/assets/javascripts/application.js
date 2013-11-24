@@ -5,6 +5,7 @@
 //= require jquery/jquery.serializeJSON
 //= require bootstrap/bootstrap.min
 //= require Ractive/Ractive
+//= require draggabilly/draggabilly
 //= require_tree .
 
 $(document).ready(function() {
