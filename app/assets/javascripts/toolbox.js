@@ -11,7 +11,7 @@ var Toolbox = (function() {
 
     var bindControls = function() {
        $("#toolbox-left a").click(function(ev){
-           DrawingBoard.addControl(ev.currentTarget);
+           DrawingBoard.addControl($(ev.currentTarget));
            $.sidr('close', 'toolbox-left');
        });
     };
