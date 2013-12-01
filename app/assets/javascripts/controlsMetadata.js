@@ -18,5 +18,16 @@ var ControlsMetadata = {
         },
         callback: function(){
         }
+    },
+
+    "HeadingControl": {
+        template: "heading-control-template",
+        propertyWindowTemplate: "heading-property-template",
+        initialData: {
+            content: "Hello! This is a heading",
+            size: "36"
+        },
+        callback: function(){
+        }
     }
 };
