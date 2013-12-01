@@ -4,6 +4,19 @@ var ControlsMetadata = {
         propertyWindowTemplate: "button-property-template",
         initialData: {
             button_label: "Submit"
+        },
+        callback: function(){
+        }
+    },
+
+    "TextControl": {
+        template: "text-control-template",
+        propertyWindowTemplate: "text-property-template",
+        initialData: {
+            textvalue: "Harsha",
+            width: "50"
+        },
+        callback: function(){
         }
     }
 };
