@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render template: "templates/controls/button"%>
-<%= render template: "templates/property/button"%>
+<% templates.each do |template|   %>
+<%= render template: template %>
+<%  end %>
+
 <%= yield %>
 
 </body>

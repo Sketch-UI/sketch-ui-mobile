@@ -22,7 +22,7 @@ var Control = (function() {
 
     return {
         create: create,
-        bindControl: bindControl,
+        bindControl: bindControl
     };
 
 })();

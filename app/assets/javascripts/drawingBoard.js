@@ -31,7 +31,7 @@ var DrawingBoard = (function() {
 
     var bindPropertyWindow = function(){
         var _this = this;
-        $("#property-window .property").change(function(ev){
+        $("#properties-container .property").change(function(ev){
             var controlId = $(ev.currentTarget).parent(".properties").data("control-id");
             _this.controls[controlId].set(_this.activePropertyWindow.get());
         });

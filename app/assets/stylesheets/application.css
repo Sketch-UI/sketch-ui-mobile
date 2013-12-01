@@ -8,14 +8,18 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require reset/reset.css
  *= require_self
  *= require_tree .
- *= require jquery/jquery.mCustomScrollbar.css
- *= require no-theme/jquery-ui-1.10.3.custom.min.css
- *= require bootstrap/bootstrap-responsive.min.css
  *= require bootstrap/bootstrap.min.css
+ *= require bootstrap/bootstrap-theme.min.css
+ *= require jquery/jquery.mCustomScrollbar.css
  *= require sidr/jquery.sidr.dark.css
  */
+
+body{
+    margin: 0;
+}
 
 #header {
     height: 50px;
@@ -32,13 +36,14 @@
 }
 
 #toolbox-link{
-    margin-top: 10px;
+    background: url("/assets/open.png") center center no-repeat;
+    display: block;
+    width: 50px;
+    height: 50px;
     float: left;
-    margin-left: 20px;
     color: #ffffff;
-    background: rgb(66, 184, 221);
     border: none;
-    font-size: 15px;
+    padding: 0;
 }
 
 #property-window-link{
@@ -51,13 +56,33 @@
     font-size: 15px;
 }
 
-src: url("<%= asset_path('SchuboiseHandwrite.eot') %>");
-src: url("<%= asset_path('SchuboiseHandwrite.otf') %>");
-src: url("<%= asset_path('SchuboiseHandwrite.svg') %>");
-src: url("<%= asset_path('SchuboiseHandwrite.ttf') %>");
-src: url("<%= asset_path('SchuboiseHandwrite.woff') %>");
-src: url("<%= asset_path('typicons.woff') %>");
-src: url("<%= asset_path('typicons.eot') %>");
-src: url("<%= asset_path('typicons.svg') %>");
-src: url("<%= asset_path('typicons.ttf') %>");
+#toolbox-left {
+    box-shadow: none;
+}
+
+#toolbox-left ul.toolbox-tab{
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+}
+
+#toolbox-left ul.toolbox-tab li{
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    background-color: #3b8bba;
+    border: none;
+    opacity: 0.5;
+}
+
+#toolbox-left ul.toolbox-tab li.active{
+    opacity: 1;
+}
+
+#toolbox-left ul.toolbox-tab li a, #toolbox-left ul.toolbox-tab li a:hover{
+    box-shadow: none;
+}
 
