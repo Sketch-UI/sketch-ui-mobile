@@ -29,5 +29,17 @@ var ControlsMetadata = {
         },
         callback: function(){
         }
+    },
+
+    "ButtonGroupControl": {
+        template: "button-group-control-template",
+        propertyWindowTemplate: "button-group-property-template",
+        initialData: {
+            leftValue:'Left',
+            middleValue:'Middle',
+            rightValue: 'Right'
+        },
+        callback: function(){
+        }
     }
 };
