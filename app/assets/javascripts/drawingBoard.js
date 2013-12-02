@@ -31,10 +31,10 @@ var DrawingBoard = (function() {
 
     var bindPropertyWindow = function(){
         var _this = this;
-        $("#properties-container .property").change(function(ev){
+        $("#properties-container .properties").on("change", ".property", (function(ev){
             var controlId = $(ev.currentTarget).parent(".properties").data("control-id");
             _this.controls[controlId].set(_this.activePropertyWindow.get());
-        });
+        }));
     };
 
     return {

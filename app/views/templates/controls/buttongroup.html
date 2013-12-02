@@ -1,9 +1,9 @@
 <script id='button-group-control-template' type='text/ractive'>
     <div class="control" data-control-id="{{controlId}}" data-metadata-id="ButtonGroupControl">
         <div class="btn-group">
-            <button type="button" class="btn btn-default">{{leftValue}}</button>
-            <button type="button" class="btn btn-default">{{middleValue}}</button>
-            <button type="button" class="btn btn-default">{{rightValue}}</button>
+            {{#buttonLabels :i}}
+              <button type="button" class="btn btn-default">{{.}}</button>
+            {{/buttonLabels}}
         </div>
     </div>
 </script>

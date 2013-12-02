@@ -5,7 +5,7 @@ var ControlsMetadata = {
         initialData: {
             button_label: "Submit"
         },
-        callback: function(){
+        callback: function(control){
         }
     },
 
@@ -16,7 +16,7 @@ var ControlsMetadata = {
             textvalue: "Harsha",
             width: "50"
         },
-        callback: function(){
+        callback: function(control){
         }
     },
 
@@ -27,7 +27,7 @@ var ControlsMetadata = {
             content: "Hello! This is a heading",
             size: "36"
         },
-        callback: function(){
+        callback: function(control){
         }
     },
 
@@ -35,11 +35,26 @@ var ControlsMetadata = {
         template: "button-group-control-template",
         propertyWindowTemplate: "button-group-property-template",
         initialData: {
-            leftValue:'Left',
-            middleValue:'Middle',
-            rightValue: 'Right'
+            noOfButtons:3,
+            buttonLabels: ["button1", "button2","button3"]
+
+
         },
-        callback: function(){
+        callback: function(control){
+            $("#properties-container .noOfButtons").val($("#properties-container .noOfButtons").data("value"));
+
+            $("#properties-container .noOfButtons").change(function(){
+                var noOfButtons = $("#properties-container .noOfButtons").val();
+                var buttonLabels = control.get("buttonLabels");
+                control.set("noOfButtons", noOfButtons);
+
+                    while(noOfButtons>buttonLabels.length){
+                        buttonLabels.push("button" + (buttonLabels.length + 1) );
+                    }
+                    while(noOfButtons<buttonLabels.length){
+                       buttonLabels.pop();
+                    }
+            });
         }
     }
 };

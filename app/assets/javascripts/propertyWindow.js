@@ -8,7 +8,7 @@ var PropertyWindow = (function() {
             template: "#" + ControlsMetadata[metadataId].propertyWindowTemplate,
             data: data
         });
-        ControlsMetadata[metadataId].callback();
+        ControlsMetadata[metadataId].callback(propertyWindowData);
         Toolbox.openToolbox();
         Toolbox.showPropertyWindow();
         return propertyWindowData;
