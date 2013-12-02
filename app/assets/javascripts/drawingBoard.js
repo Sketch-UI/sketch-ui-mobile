@@ -24,6 +24,9 @@ var DrawingBoard = (function() {
         var _this = this;
         $(".control[data-control-id=" + controlId + "]").click(function(ev){
             var element = $(ev.currentTarget);
+            if(_this.activePropertyWindow.get("controlId") == controlId){
+                return;
+            }
             _this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), _this.controls[controlId].get());
             _this.bindPropertyWindow();
         });
