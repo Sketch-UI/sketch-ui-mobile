@@ -18,6 +18,8 @@ var Control = (function() {
     var bindControl = function(){
         var control = $("#drawing-board .control").last();
         new Draggabilly(control[0]);
+        $("#drawing-board .control").removeClass("active");
+        control.addClass("active");
     };
 
     return {

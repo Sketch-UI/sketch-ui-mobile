@@ -50,6 +50,10 @@ input.property, select.property, textarea.property {
     margin: 25px auto;
 }
 
+#drawing-board .control * {
+    cursor: move;
+}
+
 
 /*#controls {*/
     /*width: 100%;*/

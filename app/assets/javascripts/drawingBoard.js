@@ -24,6 +24,8 @@ var DrawingBoard = (function() {
         var _this = this;
         $(".control[data-control-id=" + controlId + "]").click(function(ev){
             var element = $(ev.currentTarget);
+            $("#drawing-board .control").removeClass("active");
+            element.addClass("active");
             if(_this.activePropertyWindow.get("controlId") == controlId){
                 return;
             }
