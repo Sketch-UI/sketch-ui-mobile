@@ -1,0 +1,15 @@
+<script id='ButtonGroupControl-property-template' type='text/ractive'>
+ <div class='form-group properties' data-control-id='{{controlId}}'>
+     <label>No of Buttons</label>
+     <select class="property noOfButtons" data-value="{{noOfButtons}}">
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+     </select>
+     {{#buttonLabels :i}}
+     <label>Label for Button {{i+1}}</label>
+     <input type="text" class="property" value="{{.}}">
+     {{/buttonLabels}}
+ </div>
+</script>
