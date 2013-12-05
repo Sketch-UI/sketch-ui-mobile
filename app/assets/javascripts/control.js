@@ -6,7 +6,7 @@ var Control = (function() {
 
         var controlData = new Ractive({
             el: "drawing-board",
-            template: "#" + ControlsMetadata[element.data("metadata-id")].template,
+            template: "#" + element.data("metadata-id") + "-control-template",
             data: initialData,
             append: true
         });

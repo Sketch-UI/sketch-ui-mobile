@@ -5,10 +5,10 @@ var PropertyWindow = (function() {
     var create = function(metadataId, data) {
         var propertyWindowData = new Ractive({
             el: "properties-container",
-            template: "#" + ControlsMetadata[metadataId].propertyWindowTemplate,
+            template: "#" + metadataId + "-property-template",
             data: data
         });
-        ControlsMetadata[metadataId].callback(propertyWindowData);
+        ControlsMetadata[metadataId].propertyWindowCallback(propertyWindowData);
         Toolbox.openToolbox();
         Toolbox.showPropertyWindow();
         return propertyWindowData;
