@@ -1,0 +1,11 @@
+<script id='pagination-control-template' type='text/ractive'>
+    <div class="control" data-control-id="{{controlId}}" data-metadata-id="PaginationControl">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            {{#pages}}
+            <li><a href="#">{{.}}</a></li>
+            {{/pages}}
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+</script>
