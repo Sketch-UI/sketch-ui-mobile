@@ -17,6 +17,24 @@ input.property, select.property, textarea.property {
     color: #000000 !important;
 }
 
+#controls-container ul li{
+    padding-bottom: 10px;
+}
+
+#controls-container ul li a{
+    margin: auto;
+}
+
+#controls-container ul li a:hover{
+    box-shadow: none;
+}
+
+
+#controls-container ul li label{
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
 /*#property-window {*/
     /*position: relative;*/
     /*width: 400px;*/
