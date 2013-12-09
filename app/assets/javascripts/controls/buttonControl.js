@@ -3,5 +3,9 @@ window.ControlsMetadata['ButtonControl'] = {
   initialData: {
       button_label: "Submit"
   },
-  propertyWindowCallback: function(ractiveControl){}
+  propertyWindowCallback: function(ractiveControl){
+        $(".control button").dblclick(function(){
+            $("#buttonLabel").focus();
+        });
+  }
 };
