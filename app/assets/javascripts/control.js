@@ -18,7 +18,9 @@ var Control = (function() {
     var bindControl = function(position){
         var control = $("#drawing-board .control").last();
         control.css({top: position.top, left: position.left - 200, position:'absolute'});
-        new Draggabilly(control[0]);
+        controlDraggable = new Draggabilly(control[0], {
+            containment: '#drawing-board'
+        });
         $("#drawing-board .control").removeClass("active");
         control.addClass("active");
     };
