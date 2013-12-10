@@ -23,14 +23,17 @@ var DrawingBoard = (function() {
     var bindControl = function(controlId){
         var _this = this;
         $(".control[data-control-id=" + controlId + "]").click(function(ev){
-            var element = $(ev.currentTarget);
-            $("#drawing-board .control").removeClass("active");
-            element.addClass("active");
-            if(_this.activePropertyWindow.get("controlId") == controlId){
+            if(!$("body").hasClass("toolbox-left-open")){
                 return;
             }
-            _this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), _this.controls[controlId].get());
-            _this.bindPropertyWindow();
+
+            var element = $(ev.currentTarget);
+            _this.openPropertyWindow(element, controlId);
+        });
+
+        $(".control[data-control-id=" + controlId + "]").dblclick(function(ev){
+            var element = $(ev.currentTarget);
+            _this.openPropertyWindow(element, controlId);
         });
     };
 
@@ -42,11 +45,23 @@ var DrawingBoard = (function() {
         }));
     };
 
+    var openPropertyWindow = function(element, controlId){
+        $("#drawing-board .control").removeClass("active");
+        element.addClass("active");
+
+        if(this.activePropertyWindow.get("controlId") == controlId){
+            return;
+        }
+        this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), this.controls[controlId].get());
+        this.bindPropertyWindow();
+    };
+
     return {
         init: init,
         addControl: addControl,
         bindControl: bindControl,
-        bindPropertyWindow: bindPropertyWindow
+        bindPropertyWindow: bindPropertyWindow,
+        openPropertyWindow: openPropertyWindow
     };
 
 })();
