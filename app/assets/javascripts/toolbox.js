@@ -20,7 +20,7 @@ var Toolbox = (function() {
         $("#drawing-board").droppable({
             accept: '#controls-container ul li a',
             drop: function(event, ui) {
-                DrawingBoard.addControl($(ui.draggable));
+                DrawingBoard.addControl($(ui.draggable), ui.position);
                 _this.showPropertyWindow();
             }
         });

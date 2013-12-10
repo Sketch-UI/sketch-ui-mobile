@@ -1,6 +1,6 @@
 var Control = (function() {
 
-    var create = function(element, controlId) {
+    var create = function(element, controlId, position) {
         var initialData = jQuery.extend(true, {}, ControlsMetadata[element.data("metadata-id")].initialData);
         initialData["controlId"] = controlId;
 
@@ -11,12 +11,13 @@ var Control = (function() {
             append: true
         });
 
-        this.bindControl();
+        this.bindControl(position);
         return controlData;
     };
 
-    var bindControl = function(){
+    var bindControl = function(position){
         var control = $("#drawing-board .control").last();
+        control.css({top: position.top, left: position.left - 200, position:'absolute'});
         new Draggabilly(control[0]);
         $("#drawing-board .control").removeClass("active");
         control.addClass("active");

@@ -11,10 +11,10 @@ var DrawingBoard = (function() {
         PropertyWindow.init();
     };
 
-    var addControl = function(element) {
+    var addControl = function(element, position) {
         this.controlId = this.controlId + 1;
 
-        this.controls[this.controlId] = Control.create(element, this.controlId);
+        this.controls[this.controlId] = Control.create(element, this.controlId, position);
         this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), this.controls[this.controlId].get());
         this.bindControl(this.controlId);
         this.bindPropertyWindow();
