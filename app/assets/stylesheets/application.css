@@ -15,6 +15,7 @@
  *= require bootstrap/bootstrap-theme.min.css
  *= require jquery/jquery.mCustomScrollbar.css
  *= require sidr/jquery.sidr.light.css
+ *= require jquery/jquery-ui-1.10.3.custom.min.css
  */
 
 body{
@@ -58,6 +59,7 @@ body{
 
 #toolbox-left {
     box-shadow: none;
+    overflow-y: inherit;
 }
 
 #toolbox-left ul.toolbox-tab{

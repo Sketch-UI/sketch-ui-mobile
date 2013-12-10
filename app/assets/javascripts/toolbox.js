@@ -11,14 +11,19 @@ var Toolbox = (function() {
         });
         this.bindToolBox();
         this.bindControls();
+
+        $("#controls-container ul li a").draggable({ helper:'clone'});
     };
 
     var bindControls = function() {
        var _this = this;
-       $("#controls-container a").click(function(ev){
-           DrawingBoard.addControl($(ev.currentTarget));
-           _this.showPropertyWindow();
-       });
+        $("#drawing-board").droppable({
+            accept: '#controls-container ul li a',
+            drop: function(event, ui) {
+                DrawingBoard.addControl($(ui.draggable));
+                _this.showPropertyWindow();
+            }
+        });
     };
 
     var bindToolBox = function() {
