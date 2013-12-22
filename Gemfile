@@ -23,6 +23,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'rspec'
+  gem 'factory_girl'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'sqlite3'
@@ -32,10 +34,5 @@ group :development, :test do
   gem 'brakeman'
   gem 'rake'
   gem 'travis-lint'
-end
-
-group :test  do
-  gem 'rspec'
-  gem 'factory_girl'
   gem 'fuubar'
 end
