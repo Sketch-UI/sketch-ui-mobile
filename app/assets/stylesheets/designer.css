@@ -35,6 +35,14 @@ input.property, select.property, textarea.property {
     margin-bottom: 5px;
 }
 
+#drawing-board .control {
+    padding: 5px;
+}
+
+#drawing-board .control.active {
+    border: 1px dashed #000;
+}
+
 /*#property-window {*/
     /*position: relative;*/
     /*width: 400px;*/

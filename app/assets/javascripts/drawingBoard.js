@@ -6,9 +6,34 @@ var DrawingBoard = (function() {
     var init = function() {
         this.controlId = 0;
         this.controls = {};
+        this.create();
 
         Toolbox.init();
         PropertyWindow.init();
+
+        this.setupPropertyWindow();
+    };
+
+    var create = function() {
+        this.drawingBoardData = new Ractive({
+            el: "body",
+            template: "#DrawingBoardControl-control-template",
+            data: jQuery.extend(true, {}, ControlsMetadata["DrawingBoardControl"].initialData),
+            append: true
+        });
+    };
+
+    var setupPropertyWindow = function() {
+        PropertyWindow.create("DrawingBoardControl", this.drawingBoardData.get());
+
+        var _this = this;
+//        $("#drawing-board").click(function(ev){
+//            if(!$("body").hasClass("toolbox-left-open")){
+//                return;
+//            }
+//
+//            PropertyWindow.create("DrawingBoardControl", _this.drawingBoardData.get());
+//        });
     };
 
     var addControl = function(element, position) {
@@ -58,6 +83,8 @@ var DrawingBoard = (function() {
 
     return {
         init: init,
+        create: create,
+        setupPropertyWindow: setupPropertyWindow,
         addControl: addControl,
         bindControl: bindControl,
         bindPropertyWindow: bindPropertyWindow,
