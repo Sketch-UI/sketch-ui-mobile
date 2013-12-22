@@ -15,25 +15,38 @@ var DrawingBoard = (function() {
     };
 
     var create = function() {
-        this.drawingBoardData = new Ractive({
+        this.controlId = this.controlId + 1;
+
+        var initialData = jQuery.extend(true, {}, ControlsMetadata["DrawingBoardControl"].initialData);
+        initialData["controlId"] = this.controlId;
+
+        this.controls[this.controlId] = new Ractive({
             el: "body",
             template: "#DrawingBoardControl-control-template",
-            data: jQuery.extend(true, {}, ControlsMetadata["DrawingBoardControl"].initialData),
+            data: initialData,
             append: true
         });
     };
 
     var setupPropertyWindow = function() {
-        PropertyWindow.create("DrawingBoardControl", this.drawingBoardData.get());
+        this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", this.controls[1].get());
+        this.bindPropertyWindow();
 
         var _this = this;
-//        $("#drawing-board").click(function(ev){
-//            if(!$("body").hasClass("toolbox-left-open")){
-//                return;
-//            }
-//
-//            PropertyWindow.create("DrawingBoardControl", _this.drawingBoardData.get());
-//        });
+        $("#drawing-board").click(function(ev){
+            if(!$("body").hasClass("toolbox-left-open")){
+                return;
+            }
+
+            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get());
+            _this.bindPropertyWindow();
+        });
+
+        $("#drawing-board").dblclick(function(ev){
+            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get());
+            _this.bindPropertyWindow();
+        });
+
     };
 
     var addControl = function(element, position) {
@@ -49,6 +62,7 @@ var DrawingBoard = (function() {
         var _this = this;
 
         $(".control[data-control-id=" + controlId + "]").click(function(ev){
+            ev.stopPropagation();
             var element = $(ev.currentTarget);
 
             $("#drawing-board .control").removeClass("active");
@@ -62,6 +76,7 @@ var DrawingBoard = (function() {
         });
 
         $(".control[data-control-id=" + controlId + "]").dblclick(function(ev){
+            ev.stopPropagation();
             var element = $(ev.currentTarget);
             _this.openPropertyWindow(element, controlId);
         });

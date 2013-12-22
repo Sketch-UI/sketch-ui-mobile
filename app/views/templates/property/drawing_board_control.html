@@ -1,8 +1,8 @@
 <script id='DrawingBoardControl-property-template' type='text/ractive'>
-  <div class='form-group properties'>
+  <div class='form-group properties' data-control-id='{{controlId}}'>
      <label>Width</label>
-     <input type="number" class="property no_of_pages" value="{{width}}" min="100" max="1500"/>
+     <input type="number" class="property" value="{{width}}" min="100" max="1500"/>
      <label>Height</label>
-     <input type="number" class="property starting_no" value="{{height}}" min="100" max="1500"/>
+     <input type="number" class="property" value="{{height}}" min="100" max="1500"/>
   </div>
 </script>
