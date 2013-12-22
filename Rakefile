@@ -3,6 +3,5 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'rspec/core/rake_task'
 
 SketchUi::Application.load_tasks
