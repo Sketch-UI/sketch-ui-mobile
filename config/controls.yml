@@ -1,0 +1,7 @@
+controls:
+  dfsdf:
+    display_name: sdsd
+    category: all
+  TableControl:
+    display_name: Table
+    category: all
