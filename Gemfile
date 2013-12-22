@@ -8,7 +8,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'magic_encoding'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
-
+gem 'rspec-rails', '~> 2.0'
+gem 'rspec'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -29,9 +30,7 @@ group :development, :test do
 end
 
 group :test  do
-  gem 'rspec-rails', '~> 2.0'
   gem 'shoulda-matchers'
-  gem 'rspec'
   gem 'database_cleaner'
   gem 'factory_girl'
   gem 'fuubar'
