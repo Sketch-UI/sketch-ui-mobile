@@ -11,6 +11,9 @@ var Control = (function() {
             append: true
         });
 
+        var control = $("#drawing-board .control").last();
+        control.prepend("<div class='actions'><span class='delete'>X</span></div>")
+
         this.bindControl(position);
         return controlData;
     };

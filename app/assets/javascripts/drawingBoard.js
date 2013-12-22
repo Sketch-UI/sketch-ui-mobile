@@ -47,12 +47,17 @@ var DrawingBoard = (function() {
 
     var bindControl = function(controlId){
         var _this = this;
+
         $(".control[data-control-id=" + controlId + "]").click(function(ev){
+            var element = $(ev.currentTarget);
+
+            $("#drawing-board .control").removeClass("active");
+            element.addClass("active");
+
             if(!$("body").hasClass("toolbox-left-open")){
                 return;
             }
 
-            var element = $(ev.currentTarget);
             _this.openPropertyWindow(element, controlId);
         });
 
@@ -71,8 +76,6 @@ var DrawingBoard = (function() {
     };
 
     var openPropertyWindow = function(element, controlId){
-        $("#drawing-board .control").removeClass("active");
-        element.addClass("active");
 
         if(this.activePropertyWindow.get("controlId") == controlId){
             return;
