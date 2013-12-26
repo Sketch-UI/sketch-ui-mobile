@@ -5,3 +5,6 @@ controls:
   TableControl:
     display_name: Table
     category: all
+  AlertControl:
+    display_name: Alert
+    category: all

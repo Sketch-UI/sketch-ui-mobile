@@ -44,13 +44,13 @@ task :generate_control_files do
   properties_file.close
 
 
-  stylesheet_file = File.new("#{Rails.root}/app/assets/stylesheets/controls/#{metadata_file_name}.css.scss", "w")
-  stylesheet_file.puts("#controls-container li a.#{metadata_file_name} {")
-  stylesheet_file.puts("  width: 200px;")
-  stylesheet_file.puts("  height: 50px;")
-  stylesheet_file.puts("  background:  image-url('buttonControl.png');")
-  stylesheet_file.puts("}")
-  stylesheet_file.close
+  #stylesheet_file = File.new("#{Rails.root}/app/assets/stylesheets/controls/#{metadata_file_name}.css.scss", "w")
+  #stylesheet_file.puts("#controls-container li a.#{metadata_file_name} {")
+  #stylesheet_file.puts("  width: 200px;")
+  #stylesheet_file.puts("  height: 50px;")
+  #stylesheet_file.puts("  background:  image-url('buttonControl.png');")
+  #stylesheet_file.puts("}")
+  #stylesheet_file.close
 
   p "#{control_metadata_id} is created successfully."
 end

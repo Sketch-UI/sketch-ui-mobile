@@ -29,7 +29,7 @@ var DrawingBoard = (function() {
     };
 
     var setupPropertyWindow = function() {
-        this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", this.controls[1].get());
+        this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", this.controls[1].get(), this.controls[1]);
         this.bindPropertyWindow();
 
         var _this = this;
@@ -38,12 +38,12 @@ var DrawingBoard = (function() {
                 return;
             }
 
-            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get());
+            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get(), this.controls[1]);
             _this.bindPropertyWindow();
         });
 
         $("#drawing-board").dblclick(function(ev){
-            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get());
+            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get(), this.controls[1]);
             _this.bindPropertyWindow();
         });
 
@@ -53,7 +53,8 @@ var DrawingBoard = (function() {
         this.controlId = this.controlId + 1;
 
         this.controls[this.controlId] = Control.create(element, this.controlId, position);
-        this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), this.controls[this.controlId].get());
+        this.bindDeleteControl(this.controlId);
+        this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), this.controls[this.controlId].get(), this.controls[this.controlId]);
         this.bindControl(this.controlId);
         this.bindPropertyWindow();
     };
@@ -99,6 +100,15 @@ var DrawingBoard = (function() {
         this.bindPropertyWindow();
     };
 
+    var bindDeleteControl = function(controlId){
+        var _this=this;
+        $("#drawing-board .control[data-control-id='" + controlId + "'] .delete").click(function(ev){
+            ev.stopPropagation();
+            $("#drawing-board .control[data-control-id='" + controlId + "']").remove();
+            delete _this.controls[controlId];
+        });
+    };
+
     return {
         init: init,
         create: create,
@@ -106,7 +116,8 @@ var DrawingBoard = (function() {
         addControl: addControl,
         bindControl: bindControl,
         bindPropertyWindow: bindPropertyWindow,
-        openPropertyWindow: openPropertyWindow
+        openPropertyWindow: openPropertyWindow,
+        bindDeleteControl: bindDeleteControl
     };
 
 })();
