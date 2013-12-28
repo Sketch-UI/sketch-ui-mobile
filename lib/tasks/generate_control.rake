@@ -48,6 +48,8 @@ task :generate_control_files do
   stylesheet_file.puts("  width: 200px;")
   stylesheet_file.puts("  height: 50px;")
   stylesheet_file.puts("  background:  image-url('controls/#{metadata_file_name}.png');")
+  stylesheet_file.puts("  background-size:contain;")
+  stylesheet_file.puts("  background-repeat:no-repeat;")
   stylesheet_file.puts("}")
   stylesheet_file.close
 
