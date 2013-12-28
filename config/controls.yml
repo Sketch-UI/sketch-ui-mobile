@@ -26,3 +26,6 @@ controls:
   NavbarControl:
     display_name: Navigation Bar
     category: all
+  LinkControl:
+    display_name: Link
+    category: all
