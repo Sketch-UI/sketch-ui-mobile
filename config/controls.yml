@@ -17,3 +17,6 @@ controls:
   PaginationControl:
     display_name: Pagination
     category: all
+  NavbarControl:
+    display_name: Navigation Bar
+    category: all
