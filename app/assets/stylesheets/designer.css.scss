@@ -102,6 +102,10 @@ input.property, select.property, textarea.property {
     cursor: move;
 }
 
+.toolbox-tab-container {
+  overflow-y: scroll;
+  height:100%
+}
 
 /*#controls {*/
     /*width: 100%;*/
