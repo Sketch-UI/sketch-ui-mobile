@@ -11,3 +11,6 @@ controls:
   AlertControl:
     display_name: Alert
     category: all
+  ButtonGroupControl:
+    display_name: Button Group
+    category: all
