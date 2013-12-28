@@ -10,6 +10,13 @@
         <li><a href="#" data-id="properties-container">Properties</a></li>
     </ul>
     <div id="controls-container" class="toolbox-tab-container">
+        <div id="category-container">
+            <select id="category-list">
+                <% CONTROL_CATEGORIES.each do |category| %>
+                <option value="<%= category %>"><%= category %></option>
+                <% end %>
+            </select>
+        </div>
         <ul>
           <%= render template: "partials/_links"%>
         </ul>
