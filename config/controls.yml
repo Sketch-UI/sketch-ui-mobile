@@ -1,9 +1,12 @@
 controls:
-  dfsdf:
-    display_name: sdsd
+  ButtonControl:
+    display_name: Button
     category: all
-  TableControl:
-    display_name: Table
+  TextboxControl:
+    display_name: Textfield
+    category: all
+  HeadingControl:
+    display_name: Headings
     category: all
   AlertControl:
     display_name: Alert

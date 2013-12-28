@@ -1,0 +1,10 @@
+<%
+    CONTROLS.each do |control|
+%>
+    <li>
+      <label><%= control[1]["display_name"]%></label>
+      <a href="#" class="<%=control[0]%>" data-metadata-id="<%=control[0]%>"></a>
+    </li>
+<%
+    end
+%>
