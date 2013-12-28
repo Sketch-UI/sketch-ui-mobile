@@ -1,4 +1,7 @@
 controls:
+  CheckBoxControl:
+    display_name: Checkbox
+    category: all
   TextControl:
     display_name: Text
     category: all

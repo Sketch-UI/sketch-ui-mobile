@@ -12,7 +12,7 @@ body{
 }
 
 input.property, select.property, textarea.property {
-    height: 30px !important;
+    max-height: 30px !important;
     background-color: #ffffff !important;
     color: #000000 !important;
 }
