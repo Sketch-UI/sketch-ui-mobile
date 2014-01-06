@@ -29,3 +29,6 @@ controls:
   LinkControl:
     display_name: Link
     category: all
+  WellControl:
+    display_name: Well
+    category: all
