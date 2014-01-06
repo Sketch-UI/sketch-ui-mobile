@@ -12,6 +12,7 @@ var DrawingBoard = (function() {
         PropertyWindow.init();
 
         this.setupPropertyWindow();
+        PreviewBinding.init();
     };
 
     var create = function() {

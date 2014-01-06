@@ -65,6 +65,24 @@ input.property, select.property, textarea.property {
   }
 }
 
+.preview{
+  background-color: #ffffff !important;
+  position: static !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+
+  #drawing-board{
+    box-shadow: none !important;
+  }
+  #header{
+    display: none !important;
+  }
+
+  #toolbox-left{
+    display: none !important;
+  }
+}
+
 /*#property-window {*/
     /*position: relative;*/
     /*width: 400px;*/
