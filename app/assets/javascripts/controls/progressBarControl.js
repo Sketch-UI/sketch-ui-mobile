@@ -1,7 +1,7 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['ProgressBarControl'] = {
   initialData: {
-  	width: '100px'
+    width: '50'
   },
   propertyWindowCallback: function(ractiveControl){
   }
