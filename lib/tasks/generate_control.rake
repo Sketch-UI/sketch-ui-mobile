@@ -44,7 +44,7 @@ task :generate_control_files do
   properties_file.close
 
   stylesheet_file = File.new("#{Rails.root}/app/assets/stylesheets/controls/#{metadata_file_name}.css.scss", "w")
-  stylesheet_file.puts("#controls-container li a.#{{controlId}} {")
+  stylesheet_file.puts("#controls-container li a.#{control_metadata_id} {")
   stylesheet_file.puts("  width: 200px;")
   stylesheet_file.puts("  height: 50px;")
   stylesheet_file.puts("  background:  image-url('controls/NoImageControl.png');")
