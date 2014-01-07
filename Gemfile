@@ -27,7 +27,6 @@ group :development, :test do
   gem 'factory_girl'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-  gem 'sqlite3'
   gem 'pry-rails'
   gem 'pry'
   gem 'pry-nav'
