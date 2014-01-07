@@ -32,3 +32,9 @@ controls:
   WellControl:
     display_name: Well
     category: all
+  ProgressBarControl:
+    display_name: Progress Bar
+    category: all
+  ProgressBarControl:
+    display_name: Progress Bar
+    category: all
