@@ -26,3 +26,6 @@ controls:
   NavbarControl:
     display_name: Navigation Bar
     category: all
+  ButtonAddons:
+    display_name: Button Addons
+    category: all
