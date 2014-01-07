@@ -1,8 +1,8 @@
 <script id='ProgressBarControl-control-template' type='text/ractive'>
  <div class='control' data-control-id='{{controlId}}' data-metadata-id='ProgressBarControl'>
-<div class="progress" style="width:300px">
-  <div class="progress-bar progress-bar-{{progress_bar_type}}" role="progressbar" aria-valuenow="{{width}}" aria-valuemin="0" aria-valuemax="100" style="width:{{width}}%">
-    <span class="sr-only">{{width}}% Complete</span>
+<div class="progress" style="width:{{width}}px">
+  <div class="progress-bar progress-bar-{{progress_bar_type}}" role="progressbar" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percent}}%">
+    <span class="sr-only">{{percent}}% Complete</span>
   </div>
 </div>
 <input type="hidden"  />
