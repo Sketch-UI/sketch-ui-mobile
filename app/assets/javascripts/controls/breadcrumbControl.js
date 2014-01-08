@@ -1,8 +1,9 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['BreadcrumbControl'] = {
   initialData: {
-      breadcrumbs:"Home,Library,Book",
-      breadcrumbLabels: ["Home", "Library", "Book"]
+      breadcrumbs:"Home,Library,Data",
+      breadcrumbLabels: ["Home", "Library"],
+      breadcrumbLabelLast:"Data"
   },
   propertyWindowCallback: function(ractiveControl){
 
@@ -13,8 +14,9 @@ window.ControlsMetadata['BreadcrumbControl'] = {
           {
               breadcrumbLabels[i] = breadcrumbLabels[i].replace(/^\s*/, "").replace(/\s*$/, "");
           }
+          var breadcrumbLabelLast = breadcrumbLabels.pop();
           ractiveControl.set("breadcrumbLabels", breadcrumbLabels)
-
+          ractiveControl.set("breadcrumbLabelLast", breadcrumbLabelLast)
       });
   }
 };
