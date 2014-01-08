@@ -40,4 +40,6 @@ controls:
     category: all
   BreadcrumbControl:
     display_name: Breadcrumb
+  ButtonAddons:
+    display_name: Button Addons
     category: all
