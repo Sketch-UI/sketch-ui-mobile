@@ -38,3 +38,6 @@ controls:
   ProgressBarControl:
     display_name: Progress Bar
     category: all
+  BreadcrumbControl:
+    display_name: Breadcrumb
+    category: all

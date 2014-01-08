@@ -1,0 +1,9 @@
+<script id='BreadcrumbControl-control-template' type='text/ractive'>
+ <div class='control' data-control-id='{{controlId}}' data-metadata-id='BreadcrumbControl'>
+    <ol class="breadcrumb">
+        {{#breadcrumbLabels :i}}
+            <li><a href="#">{{.}}</a></li>
+        {{/breadcrumbLabels}}
+    </ol>
+ </div>
+</script>
