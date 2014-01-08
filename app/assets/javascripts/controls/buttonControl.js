@@ -1,9 +1,9 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['ButtonControl'] = {
     initialData: {
-        button_label: "Submit",
-        background_color: "lightgray",
-        text_color: "black"
+        button_label: "Button",
+        background_color: "#428bca",
+        text_color: "white"
     },
     propertyWindowCallback: function (ractiveControl) {
         $(".control button").dblclick(function () {
