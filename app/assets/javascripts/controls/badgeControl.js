@@ -2,9 +2,9 @@ window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['BadgeControl'] = {
   initialData: {
     value: 42,
+    badge_text: "Some Text",
     background_color: "#428bca",
     text_color: "white"
-
   },
     propertyWindowCallback: function(ractiveControl){
          var colorPicker = function (element, styleProperty) {
