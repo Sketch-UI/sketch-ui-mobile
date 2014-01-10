@@ -25,5 +25,6 @@ window.ControlsMetadata['BadgeControl'] = {
         }
 
         $('#picker').focus(colorPicker($('#backgroundPicker'), "background_color"));
+        $('#textPicker').focus(colorPicker($('#textPicker'), "text_color"));
     }
 };
