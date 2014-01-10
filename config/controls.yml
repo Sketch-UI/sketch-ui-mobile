@@ -42,4 +42,6 @@ controls:
     display_name: Breadcrumb
   ButtonAddons:
     display_name: Button Addons
+  BadgeControl:
+    display_name: Badge Control
     category: all
