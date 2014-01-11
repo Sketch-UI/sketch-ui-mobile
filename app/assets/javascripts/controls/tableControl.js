@@ -2,7 +2,7 @@
     tbody= "",
     theader="",
     headerData= ""
-  };
+    };
 
   function insertTable() {
       formatData();
