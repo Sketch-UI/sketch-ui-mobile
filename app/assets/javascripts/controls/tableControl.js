@@ -6,7 +6,7 @@
 
   function insertTable() {
       formatData();
-      var result = document.getElementById("userInput").value.split('/');
+      var result = document.getElementById("userInput").value.split('|');
       headerData = result.splice(0, 1)[0].split(',');
       var num_rows = result.length;
 
