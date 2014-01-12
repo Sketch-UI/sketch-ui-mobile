@@ -35,6 +35,8 @@ var DrawingBoard = (function() {
 
         var _this = this;
         $("#drawing-board").click(function(ev){
+            $("#drawing-board .control").removeClass("active");
+            
             if(!$("body").hasClass("toolbox-left-open")){
                 return;
             }
