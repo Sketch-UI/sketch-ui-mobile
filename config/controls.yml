@@ -40,8 +40,10 @@ controls:
     category: all
   BreadcrumbControl:
     display_name: Breadcrumb
+    category: all
   ButtonAddons:
     display_name: Button Addons
+    category: all
   BadgeControl:
     display_name: Badge Control
     category: all
@@ -50,6 +52,7 @@ controls:
     category: all
   AccordianControl:
     display_name: Accordian
+    category: all
   TabControl:
     display_name: Basic Tab Display
     category: all
