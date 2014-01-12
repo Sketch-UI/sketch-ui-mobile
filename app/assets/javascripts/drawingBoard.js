@@ -99,7 +99,7 @@ var DrawingBoard = (function() {
         if(this.activePropertyWindow.get("controlId") == controlId){
             return;
         }
-        this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), this.controls[controlId].get());
+        this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), this.controls[controlId].get(), this.controls[controlId]);
         this.bindPropertyWindow();
     };
 
