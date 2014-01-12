@@ -1,10 +1,10 @@
 <script id='CheckBoxControl-property-template' type='text/ractive'>
     <div class='form-group properties' data-control-id='{{controlId}}'>
-        <input type="checkbox" class="property" checked="{{selected}}"/> <label> Selected</label>
-
-        <p>
-            <label>Caption</label>
-            <input type="text" class="property" value="{{caption}}"/>
-        </p>
+        <label>Selected</label><br/>
+        <input type="checkbox" class="property" checked="{{selected}}"/><br/>
+        <label>Caption</label>
+        <input type="text" class="property" value="{{caption}}"/>
+        <label>Color</label>
+        <input type="text" class="property color-property" value="{{color}}">
     </div>
 </script>
