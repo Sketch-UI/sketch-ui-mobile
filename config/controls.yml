@@ -50,8 +50,8 @@ controls:
   LabelControl:
     display_name: Label
     category: all
-  AccordianControl:
-    display_name: Accordian
+  AccordionControl:
+    display_name: Accordion
     category: all
   TabControl:
     display_name: Basic Tab Display
