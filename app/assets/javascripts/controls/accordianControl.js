@@ -4,7 +4,9 @@ window.ControlsMetadata['AccordianControl'] = {
       items: [{ item: "Item1", index: 0, active: true}, { item: "Item2", index: 1, active: false},
           { item: "Item3", index: 2, active: false}, { item: "Item4", index: 3, active: false}],
       width: 500,
-      height: 300
+      height: 300,
+      color: "#ffffff",
+      bgcolor: "#428bca"
   },
   propertyWindowCallback: function(ractiveControl){
       $("#accordian-items").val("Item1***\nItem2\nItem3\nItem4");

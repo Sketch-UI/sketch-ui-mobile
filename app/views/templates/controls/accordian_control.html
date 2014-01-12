@@ -2,10 +2,10 @@
  <div class='control' data-control-id='{{controlId}}' data-metadata-id='AccordianControl'>
     <div class="panel-group" id="accordion" style="width: {{width}}px;">
         {{#items}}
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="panel panel-default" style="border-color: {{bgcolor}};">
+                <div class="panel-heading" style="background-image: none;background-color: {{bgcolor}};">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#{{index}}">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#{{index}}" style="color: {{color}};">
                             {{item}}
                         </a>
                     </h4>
