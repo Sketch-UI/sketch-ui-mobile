@@ -1,6 +1,7 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['LabelControl'] = {
   initialData: {
+    label_type:'info',
     label_text: "Sample Label"
   },
   propertyWindowCallback: function(ractiveControl){
@@ -20,6 +21,9 @@ window.ControlsMetadata['LabelControl'] = {
           $(this).colpickSetColor(this.value);
     })
   }
+  $("#label-type").change(function(ev){
+      ractiveControl.set("label_type", $("#label-type").val());
+  });
   $('#picker').focus(colorPicker($('#backgroundPicker'), "background_color"));
   $('#textPicker').focus(colorPicker($('#textPicker'), "text_color"));
   }

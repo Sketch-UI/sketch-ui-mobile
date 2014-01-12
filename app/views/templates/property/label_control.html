@@ -1,5 +1,14 @@
 <script id='LabelControl-property-template' type='text/ractive'>
  <div class='form-group properties' data-control-id='{{controlId}}'>
+  <label>Label Type</label>
+  <select id="label-type">
+      <option value="default">Default</option>
+      <option value="primary">Primary</option>
+      <option value="success">Success</option>
+      <option value="info">Info</option>
+      <option value="warning">Warning</option>
+      <option value="danger">Error</option>
+  </select>
   <label>Label Text</label>
   <input type='text' class='property' value='{{label_text}}'>
   <input type="text" id="backgroundPicker" class="picker">
