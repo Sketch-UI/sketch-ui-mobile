@@ -1,0 +1,21 @@
+<script id='AccordianControl-control-template' type='text/ractive'>
+ <div class='control' data-control-id='{{controlId}}' data-metadata-id='AccordianControl'>
+    <div class="panel-group" id="accordion" style="width: {{width}}px;">
+        {{#items}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#{{index}}">
+                            {{item}}
+                        </a>
+                    </h4>
+                </div>
+                <div id="{{index}}" class="panel-collapse collapse {{#active}}in{{/active}}">
+                    <div class="panel-body" style="height: {{height}}px;">
+                    </div>
+                </div>
+            </div>
+        {{/items}}
+    </div>
+ </div>
+</script>

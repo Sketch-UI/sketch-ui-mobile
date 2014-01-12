@@ -48,3 +48,6 @@ controls:
   LabelControl:
     display_name: Label
     category: all
+  AccordianControl:
+    display_name: Accordian
+    category: all
