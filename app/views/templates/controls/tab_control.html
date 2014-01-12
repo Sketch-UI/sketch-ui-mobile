@@ -6,13 +6,13 @@
           <li id= "{{content}}"><a href="{{href}}" data-toggle="tab">{{heading}}</a></li>
          {{/combined_data}}
       </ul>
+      <div id="myTabContent" class="tab-content">
         {{#combined_data :i}}
-          <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade" id="{{heading}}">
-              <p>Highjsdhksdslfk.dlkfdl;kf'd;kfew;'kfew'fkew'ke'wfke'w;fkew';w;'</p>
+              <p>{{content}}</p>
             </div>
-          </div>
          {{/combined_data}}
+      </div>
     </div>
   </div>
 </script>

@@ -6,7 +6,7 @@ window.ControlsMetadata['TabControl'] = {
   initialData: {
     tab_headers: ["Tab1","Tab2"],
     tab_content: ["First Tab","Another Tab"],
-    combined_data: []
+    combined_data: [{content: "First Tab",heading: "Tab1",href: "#Tab1"},{content: "Another Tab",heading: "Tab2",href: "#Tab2"}]
   },
   propertyWindowCallback: function(ractiveControl){
     $('#myTab a').click(function (e) {
@@ -53,6 +53,8 @@ window.ControlsMetadata['TabControl'] = {
         }
         ractiveControl.set("combined_data", combined_data);
     });
+    $("li[id='First Tab']:first").addClass("active");
+    $("div[id='Tab1']:first").addClass("in active");
   }
 
 };
