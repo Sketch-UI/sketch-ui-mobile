@@ -1,0 +1,19 @@
+<script id='TabControl-control-template' type='text/ractive'>
+  <div class='control' data-control-id='{{controlId}}' data-metadata-id='TabControl'>
+    <div>
+      <ul id="myTab" class="nav nav-tabs">
+        {{#combined_data :i}}
+          <li id= "{{content}}"><a href="{{href}}" data-toggle="tab">{{heading}}</a></li>
+         {{/combined_data}}
+      </ul>
+        {{#combined_data :i}}
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade" id="{{heading}}">
+              <p>Highjsdhksdslfk.dlkfdl;kf'd;kfew;'kfew'fkew'ke'wfke'w;fkew';w;'</p>
+            </div>
+          </div>
+         {{/combined_data}}
+    </div>
+  </div>
+</script>
+

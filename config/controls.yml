@@ -50,4 +50,6 @@ controls:
     category: all
   AccordianControl:
     display_name: Accordian
+  TabControl:
+    display_name: Basic Tab Display
     category: all

@@ -1,0 +1,114 @@
+diff --git a/app/assets/javascripts/controls/tabControl.js b/app/assets/javascripts/controls/tabControl.js
+index 8d51409..9e3cd21 100644
+--- a/app/assets/javascripts/controls/tabControl.js
++++ b/app/assets/javascripts/controls/tabControl.js
+@@ -1,6 +1,30 @@
+-
+-  var combined_data= [];
+-
++var combined_data= [];
++function resetCombinedData(){
++  combined_data= [];
++};
++function updateCombinedData(data){
++  var i=0;
++  for(; i < data[0].headerLabels.length; i++)
++  {
++      combined_data.push({
++        content: data[0].contentLabels[i],
++        heading: data[0].headerLabels[i],
++        href:   "#"+data[0].headerLabels[i]
++      });
++  }
++};
++function getUpdatedData(){
++  var data=[];
++  var headers = $("#properties-container .headers").val();
++  var headings = headers.split(',');
++  var content = $("#properties-container .content").val();
++  var contents = content.split(',');
++  data.push({
++    headerLabels: headings,
++    contentLabels: contents
++  });
++  return data;
++};
+ window.ControlsMetadata = window.ControlsMetadata || {};
+ window.ControlsMetadata['TabControl'] = {
+   initialData: {
+@@ -19,39 +43,19 @@ window.ControlsMetadata['TabControl'] = {
+       }
+   });
+ 
+-    $("#properties-container .headers").change(function () {
+-        combined_data =[]
+-        var headers = $("#properties-container .headers").val();
+-        var headerLabels = headers.split(',');
+-        var i=0;
+-        for(; i < headerLabels.length; i++)
+-        {
+-            headerLabels[i] = headerLabels[i].replace(/^\s*/, "").replace(/\s*$/, "");
+-            // combined_data.push({
+-            //   href:   "#"+headerLabels[i],
+-            //   content: headerLabels[i]
+-            // });
+-        }
+-        ractiveControl.set("headerLabels", headerLabels);
+-    });
++    // $("#properties-container .headers").change(function () {
++    //     resetCombinedData();
++    //     var data = getUpdatedData();
++    //     updateCombinedData(data);
++    //     // ractiveControl.set("combined_data", combined_data);
++    // });
+ 
+     $("#properties-container .content").change(function () {
+-        combined_data =[]
+-        var headers = $("#properties-container .headers").val();
+-        var headerLabels = headers.split(',');
+-        var content = $("#properties-container .content").val();
+-        var contentLabels = content.split(',');
+-        var i=0;
+-        for(; i < contentLabels.length; i++)
+-        {
+-            contentLabels[i] = contentLabels[i].replace(/^\s*/, "").replace(/\s*$/, "");
+-            combined_data.push({
+-              heading: headerLabels[i],
+-              href:   "#"+headerLabels[i],
+-              content: contentLabels[i]
+-            });
+-        }
++        resetCombinedData();
++        var data = getUpdatedData();
++        updateCombinedData(data);
+         ractiveControl.set("combined_data", combined_data);
++        ractiveControl.set("tab_content", combined_data.contentLabels);
+     });
+     $("li[id='First Tab']:first").addClass("active");
+     $("div[id='Tab1']:first").addClass("in active");
+diff --git a/app/views/templates/controls/tab_control.html b/app/views/templates/controls/tab_control.html
+index 3ef9c1e..146cc55 100644
+--- a/app/views/templates/controls/tab_control.html
++++ b/app/views/templates/controls/tab_control.html
+@@ -11,7 +11,7 @@
+             <div class="tab-pane fade" id="{{heading}}">
+               <p>{{content}}</p>
+             </div>
+-         {{/combined_data}}
++        {{/combined_data}}
+       </div>
+     </div>
+   </div>
+diff --git a/app/views/templates/property/tab_control.html b/app/views/templates/property/tab_control.html
+index 2e0b987..9c70f46 100644
+--- a/app/views/templates/property/tab_control.html
++++ b/app/views/templates/property/tab_control.html
+@@ -1,6 +1,6 @@
+ <script id='TabControl-property-template' type='text/ractive'>
+  <div class='form-group properties' data-control-id='{{controlId}}'>
+-    <input type="text" class="property headers" value="{{tab_headers}}">
+-    <input type="text" class="property content" value="{{tab_content}}">
++    <input type="text" class="property headers">
++    <input type="text" class="property content">
+  </div>
+ </script>
