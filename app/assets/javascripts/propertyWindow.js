@@ -8,10 +8,11 @@ var PropertyWindow = (function() {
             template: "#" + metadataId + "-property-template",
             data: data
         });
+        ColorPickerBinding.init(controlRactive, propertyWindowData);
+        DropdownBinding.init(controlRactive, propertyWindowData);
         ControlsMetadata[metadataId].propertyWindowCallback(controlRactive);
         Toolbox.openToolbox();
         Toolbox.showPropertyWindow();
-        ColorPickerBinding.init(controlRactive, propertyWindowData);
         return propertyWindowData;
     };
 
