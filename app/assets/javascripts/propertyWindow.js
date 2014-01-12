@@ -11,6 +11,7 @@ var PropertyWindow = (function() {
         ControlsMetadata[metadataId].propertyWindowCallback(controlRactive);
         Toolbox.openToolbox();
         Toolbox.showPropertyWindow();
+        ColorPickerBinding.init(controlRactive, propertyWindowData);
         return propertyWindowData;
     };
 
