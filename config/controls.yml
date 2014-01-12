@@ -45,3 +45,6 @@ controls:
   BadgeControl:
     display_name: Badge Control
     category: all
+  LabelControl:
+    display_name: Label
+    category: all
