@@ -39,12 +39,12 @@ var DrawingBoard = (function() {
                 return;
             }
 
-            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get(), this.controls[1]);
+            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get(), _this.controls[1]);
             _this.bindPropertyWindow();
         });
 
         $("#drawing-board").dblclick(function(ev){
-            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get(), this.controls[1]);
+            _this.activePropertyWindow = PropertyWindow.create("DrawingBoardControl", _this.controls[1].get(), _this.controls[1]);
             _this.bindPropertyWindow();
         });
 

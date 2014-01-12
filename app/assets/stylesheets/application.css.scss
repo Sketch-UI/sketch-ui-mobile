@@ -61,10 +61,15 @@ body{
     box-shadow: none;
     overflow-y: inherit;
 
+    #controls-container{
+      padding-bottom: 150px;
+    }
+
     #category-container{
       width: 100%;
       height: 50px;
       padding: 10px;
+
     }
 }
 
