@@ -1,0 +1,18 @@
+.preview{
+  background-color: #ffffff !important;
+  position: static !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+
+  #drawing-board{
+    box-shadow: none !important;
+    background: none;
+  }
+  #header{
+    display: none !important;
+  }
+
+  #toolbox-left{
+    display: none !important;
+  }
+}

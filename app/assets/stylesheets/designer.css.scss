@@ -11,10 +11,13 @@ body{
   padding: 15px;
 }
 
-input.property, select.property, textarea.property {
-  max-height: 30px !important;
+input.property, select.property, textarea.property{
   background-color: #ffffff !important;
   color: #000000 !important;
+}
+
+input.property, select.property{
+  max-height: 30px !important;
 }
 
 #controls-container ul li{
@@ -66,25 +69,6 @@ input.property, select.property, textarea.property {
     }
   }
 }
-
-.preview{
-  background-color: #ffffff !important;
-  position: static !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-
-  #drawing-board{
-    box-shadow: none !important;
-  }
-  #header{
-    display: none !important;
-  }
-
-  #toolbox-left{
-    display: none !important;
-  }
-}
-
 /*#property-window {*/
   /*position: relative;*/
   /*width: 400px;*/
