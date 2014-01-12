@@ -1,19 +1,19 @@
 <script id='TabControl-control-template' type='text/ractive'>
   <div class='control' data-control-id='{{controlId}}' data-metadata-id='TabControl'>
-    <div>
+    <div style="width: {{width}}px; height: {{height}}px;">
       <ul id="myTab" class="nav nav-tabs">
-        {{#combined_data :i}}
-          <li id= "{{content}}"><a href="{{href}}" data-toggle="tab">{{heading}}</a></li>
-         {{/combined_data}}
+        {{#items}}
+          <li class="{{#active}}active{{/active}}">
+            <a href="#{{index}}" data-toggle="tab">{{item}}</a>
+          </li>
+         {{/items}}
       </ul>
-      <div id="myTabContent" class="tab-content">
-        {{#combined_data :i}}
-            <div class="tab-pane fade" id="{{heading}}">
-              <p>{{content}}</p>
+      <div  id="myTabContent" class="tab-content">
+        {{#items}}
+            <div class="tab-pane fade" id="{{index}}">
             </div>
-         {{/combined_data}}
+        {{/items}}
       </div>
     </div>
   </div>
 </script>
-
