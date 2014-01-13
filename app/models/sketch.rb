@@ -1,5 +1,5 @@
 class Sketch
   include Mongoid::Document
-  field :name, type: String
-  field :content, type: String
+  field :identifier, type: String
+  field :data, type: Array
 end

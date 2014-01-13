@@ -7,12 +7,17 @@ var DrawingBoard = (function() {
         this.controlId = 0;
         this.controls = {};
         this.create();
+        var _this = this;
 
         Toolbox.init();
         PropertyWindow.init();
 
         this.setupPropertyWindow();
         PreviewBinding.init();
+
+        $("#save-sketch-btn").click(function(ev){
+            SketchSaver.save(_this.controls);
+        });
     };
 
     var create = function() {
