@@ -1,6 +1,7 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['AccordionControl'] = {
   initialData: {
+      itemsString: "Item1***\nItem2\nItem3\nItem4",
       items: [{ item: "Item1", index: 0, active: true}, { item: "Item2", index: 1, active: false},
           { item: "Item3", index: 2, active: false}, { item: "Item4", index: 3, active: false}],
       width: 500,
@@ -9,9 +10,9 @@ window.ControlsMetadata['AccordionControl'] = {
       bgcolor: "#428bca"
   },
   propertyWindowCallback: function(ractiveControl){
-      $("#accordion-items").val("Item1***\nItem2\nItem3\nItem4");
-      $("#accordion-items").change(function(ev){
-            var items = $("#accordion-items").val().split("\n");
+      $("#accordion-items").change(function(){
+            var itemsString = $("#accordion-items").val();
+            var items = itemsString.split("\n");
             var formattedItems = [];
             for(var i=0;i<items.length;i++){
                 var item = items[i];
