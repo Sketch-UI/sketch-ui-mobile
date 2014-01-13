@@ -1,0 +1,10 @@
+<script id='VerticalMenuControl-control-template' type='text/ractive'>
+ <div class='control' data-control-id='{{controlId}}' data-metadata-id='VerticalMenuControl'>
+    <ul class="nav nav-pills nav-stacked" style="width: {{width}}px">
+        <li class="active"><a href="#" style="background-color: {{bgcolor}}">{{verticalMenuLabelActive}}</a></li>
+        {{#verticalMenuLabels :i}}
+            <li><a href="#" style="color: {{color}}">{{.}}</a></li>
+        {{/verticalMenuLabels}}
+    </ul>
+ </div>
+</script>

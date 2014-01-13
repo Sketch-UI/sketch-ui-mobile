@@ -56,3 +56,6 @@ controls:
   TabControl:
     display_name: Basic Tab Display
     category: all
+  VerticalMenuControl:
+    display_name: Vertical Menu 
+    category: all
