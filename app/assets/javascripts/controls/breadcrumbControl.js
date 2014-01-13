@@ -1,9 +1,11 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['BreadcrumbControl'] = {
   initialData: {
-      breadcrumbs:"Home,Library,Data",
+      breadcrumbs:"Home, Library, Data",
       breadcrumbLabels: ["Home", "Library"],
-      breadcrumbLabelLast:"Data"
+      breadcrumbLabelLast:"Data",
+      color:"#428bca",
+      colorActive:"#999"
   },
   propertyWindowCallback: function(ractiveControl){
 

@@ -2,9 +2,9 @@
  <div class='control' data-control-id='{{controlId}}' data-metadata-id='BreadcrumbControl'>
     <ol class="breadcrumb">
         {{#breadcrumbLabels :i}}
-            <li><a href="#">{{.}}</a></li>
+            <li><a href="#" style='color: {{color}};'>{{.}}</a></li>
         {{/breadcrumbLabels}}
-        <li class="active">{{breadcrumbLabelLast}}</li>
+        <li class="active" style='color: {{colorActive}};'>{{breadcrumbLabelLast}}</li>
     </ol>
  </div>
 </script>
