@@ -1,4 +1,4 @@
-<input type="hidden" id="identifier" value="<%= @sketch.identifier %>"/>
+<input type="hidden" id="identifier" value="<%= @sketch_identifer %>"/>
 <% templates.each do |template|   %>
     <%= render template: template %>
 <%  end %>
@@ -12,7 +12,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">SketchUI</a>
+    <a class="navbar-brand" href="/">SketchUI</a>
   </div>
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -5,6 +5,11 @@ class SketchesController < ApplicationController
 
   def new
     @sketch = Sketch.create(identifier: SecureRandom.hex)
+    redirect_to :action => 'show', :id => @sketch.identifier
+  end
+
+  def show
+    @sketch_identifier = params[:id]
   end
 
   def create
