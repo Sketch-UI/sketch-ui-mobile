@@ -1,25 +1,32 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['VerticalMenuControl'] = {
   initialData: {
-      verticalMenuLabelActive: "Home",
-      verticalMenuLabels: ["Profile", "Messages"],
-      items: "Home, Profile, Messages",
+      items: ["Home", "Profile", "Messages"],
+      itemsString: "Home***\nProfile\nMessages",
+      items: [{ item: "Home", active: true}, { item: "Profile", active: false},
+          { item: "Messages", active: false}],
       color:"#428bca",
       bgcolor:"#428bca",
       width: 90
   },
   propertyWindowCallback: function(ractiveControl){
-      $("#properties-container .menu-items").change(function () {
-          var items = $("#properties-container .menu-items").val();
-          var verticalMenuLabels = items.split(',');
-          for(var i = 0; i < verticalMenuLabels.length; i++)
-          {
-              verticalMenuLabels[i] = verticalMenuLabels[i].replace(/^\s*/, "").replace(/\s*$/, "");
+      $("#menu-items").change(function () {
+          var itemsString = $("#menu-items").val();
+          var items = itemsString.split("\n");
+          var formattedItems = [];
+          for(var i=0;i<items.length;i++){
+              var item = items[i];
+              var active=false;
+              if(item.substr(item.length - 3) == "***"){
+                  item = item.substring(0, item.length-3);
+                  active=true;
+              }
+              formattedItems.push({
+                  item: item,
+                  active: active
+              });
           }
-          var verticalMenuLabelActive = verticalMenuLabels.reverse().pop();
-          verticalMenuLabels.reverse();
-          ractiveControl.set("verticalMenuLabelActive", verticalMenuLabelActive)
-          ractiveControl.set("verticalMenuLabels", verticalMenuLabels)
+          ractiveControl.set("items", formattedItems);
       });
   }
 };
