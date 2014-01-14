@@ -2,7 +2,7 @@ var NavigationBar = (function() {
 
     var init = function() {
         $("#save-sketch-link").click(function(ev){
-            SketchSaver.save(DrawingBoard.controls);
+            SketchesController.save();
         });
 
         $("#preview-link").click(function(ev){

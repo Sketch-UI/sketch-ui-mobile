@@ -11,8 +11,35 @@ var SketchesController = (function() {
         });
     };
 
+    var save = function(){
+        var controls = DrawingBoard.controls,
+            sketchData = [];
+
+        for(var key in controls){
+            if(key=="1"){
+
+            }
+            else{
+                var $control = $("#drawing-board .control[data-control-id='"+key+"']");
+                var controlData = {
+                    id: key,
+                    type: $control.data("metadata-id"),
+                    properties: controls[key].get(),
+                    position: $control.position()
+                }
+                sketchData.push(controlData)
+            }
+        }
+
+        Loader.start();
+        Sketch.save({ identifier: $("#identifier").val(), data: sketchData}, function(data){
+            Loader.stop();
+        });
+    };
+
     return {
-        show: show
+        show: show,
+        save: save
     };
 
 })();

@@ -1,14 +1,15 @@
 var Sketch = (function() {
 
-    var save = function(attrs) {
+    var save = function(attrs, callback) {
         $.ajax({
             type: "POST",
             url: "/sketches",
             dataType: "json",
             data: {
-                identifier: $("#identifier").val(),
-                data: sketchData
-            }
+                identifier: attrs.identifier,
+                data: attrs.data
+            },
+            success: callback
         });
     };
 

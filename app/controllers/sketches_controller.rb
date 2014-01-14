@@ -29,9 +29,10 @@ class SketchesController < ApplicationController
   private
   def parse_data
     parsed_data = []
+    return parsed_data unless params[:data].present?
     params[:data].keys.each do |key|
       parsed_data << params["data"][key]
     end
-  parsed_data
+    parsed_data
   end
 end
