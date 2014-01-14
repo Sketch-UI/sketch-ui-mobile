@@ -12,10 +12,26 @@ class SketchesController < ApplicationController
     @sketch_identifier = params[:id]
   end
 
+  def data
+    sketch = Sketch.find_by(identifier: params[:id])
+    render :json => {
+        controls_data: sketch.data
+    }
+  end
+
   def create
     sketch = Sketch.find_by(identifier: params[:identifier])
-    sketch.data = [params[:data]]
+    sketch.data = parse_data
     sketch.save
     render :json => {}
+  end
+
+  private
+  def parse_data
+    parsed_data = []
+    params[:data].keys.each do |key|
+      parsed_data << params["data"][key]
+    end
+  parsed_data
   end
 end
