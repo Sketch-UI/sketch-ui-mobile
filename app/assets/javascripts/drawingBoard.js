@@ -14,10 +14,7 @@ var DrawingBoard = (function() {
 
         this.setupPropertyWindow();
         PreviewBinding.init();
-
-        $("#save-sketch-btn").click(function(ev){
-            SketchSaver.save(_this.controls);
-        });
+        NavigationBar.init();
     };
 
     var create = function() {

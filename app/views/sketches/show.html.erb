@@ -1,4 +1,4 @@
-<input type="hidden" id="identifier" value="<%= @sketch_identifer %>"/>
+<input type="hidden" id="identifier" value="<%= @sketch_identifier %>"/>
 <% templates.each do |template|   %>
     <%= render template: template %>
 <%  end %>
@@ -21,7 +21,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <!--<li class="divider"></li>-->
-          <li><a href="#" id="save-sketch-btn">Save</a></li>
+          <li><a href="#" id="save-sketch-link">Save</a></li>
         </ul>
       </li>
     </ul>

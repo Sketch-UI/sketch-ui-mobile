@@ -22,7 +22,7 @@ var SketchSaver = (function() {
 
         $.ajax({
             type: "POST",
-            url: "sketches/",
+            url: "/sketches",
             dataType: "json",
             data: {
                 identifier: $("#identifier").val(),
