@@ -7,12 +7,14 @@ var DrawingBoard = (function() {
         this.controlId = 0;
         this.controls = {};
         this.create();
+        var _this = this;
 
         Toolbox.init();
         PropertyWindow.init();
 
         this.setupPropertyWindow();
         PreviewBinding.init();
+        NavigationBar.init();
     };
 
     var create = function() {
@@ -52,12 +54,18 @@ var DrawingBoard = (function() {
 
     };
 
-    var addControl = function(element, position) {
+    var addControl = function(metadataId, position, data) {
         this.controlId = this.controlId + 1;
 
-        this.controls[this.controlId] = Control.create(element, this.controlId, position);
+        if(!data){
+            data = jQuery.extend(true, {}, ControlsMetadata[metadataId].initialData);
+        }
+
+        data["controlId"] = this.controlId;
+
+        this.controls[this.controlId] = Control.create(metadataId, position, data);
         this.bindDeleteControl(this.controlId);
-        this.activePropertyWindow = PropertyWindow.create(element.data("metadata-id"), this.controls[this.controlId].get(), this.controls[this.controlId]);
+        this.activePropertyWindow = PropertyWindow.create(metadataId, this.controls[this.controlId].get(), this.controls[this.controlId]);
         this.bindControl(this.controlId);
         this.bindPropertyWindow();
     };

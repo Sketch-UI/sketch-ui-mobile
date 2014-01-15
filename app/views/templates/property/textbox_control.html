@@ -1,8 +1,18 @@
 <script id='TextboxControl-property-template' type='text/ractive'>
  <div class='form-group properties' data-control-id='{{controlId}}'>
+     <label>Placeholder</label>
+     <input type="text" class="property" value="{{placeholder}}">
      <label>Textbox value</label>
      <input type="text" class="property" value="{{textvalue}}">
+     <label>Color</label>
+     <input type="text" class="property color-property" value="{{color}}">
+     <label>Size</label>
+     <select class="property" data-value="size">
+        <option value="input-sm">Small</option>
+        <option value="">Default</option>
+        <option value="input-lg">Large</option>
+     </select>
      <label>Width</label>
-     <input type="text" class="property" value="{{width}}">
+     <input type="number" class="property" value="{{width}}" min="10" max="1500"/>
  </div>
 </script>

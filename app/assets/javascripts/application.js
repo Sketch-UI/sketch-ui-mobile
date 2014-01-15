@@ -10,5 +10,8 @@
 //= require_tree .
 
 $(document).ready(function() {
-    DrawingBoard.init();
+    if($("#toolbox-template").length>0){
+        DrawingBoard.init();
+        SketchesController.show();
+    }
 });

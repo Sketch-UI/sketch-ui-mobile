@@ -1,0 +1,54 @@
+<input type="hidden" id="identifier" value="<%= @sketch_identifier %>"/>
+<% templates.each do |template|   %>
+    <%= render template: template %>
+<%  end %>
+
+<nav class="navbar navbar-inverse" role="navigation" id="header">
+  <div class="navbar-header">
+    <a id="toolbox-link" class="btn btn-primary" href="#toolbox-link"></a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">SketchUI</a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <!--<li class="divider"></li>-->
+          <li><a href="#" id="save-sketch-link">Save</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" id="preview-link">Preview</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<script id='toolbox-template' type='text/ractive'>
+    <ul class="toolbox-tab">
+        <li><a href="#" data-id="controls-container">Controls</a></li>
+        <li><a href="#" data-id="properties-container">Properties</a></li>
+    </ul>
+    <div id="controls-container" class="toolbox-tab-container">
+        <div id="category-container">
+            <select id="category-list">
+                <% CONTROL_CATEGORIES.each do |category| %>
+                <option value="<%= category %>"><%= category %></option>
+                <% end %>
+            </select>
+        </div>
+        <ul>
+          <%= render template: "partials/_links"%>
+        </ul>
+    </div>
+    <div id="properties-container" class="toolbox-tab-container">
+
+    </div>
+</script>

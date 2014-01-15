@@ -58,4 +58,6 @@ controls:
     category: all
   DropdownControl:
     display_name: Dropdown
+  VerticalMenuControl:
+    display_name: Vertical Menu
     category: all
