@@ -33,6 +33,36 @@ class SketchesController < ApplicationController
     params[:data].keys.each do |key|
       parsed_data << params["data"][key]
     end
+
+    parsed_data.each do |control|
+      control["properties"].keys.each do |key|
+        unless control["properties"][key].is_a?(String)
+          control["properties"][key] = control["properties"][key].values.map(&:symbolize_keys)
+        end
+      end
+    end
+
+    parsed_data.each do |control|
+      convert_to_boolean control["properties"]
+    end
     parsed_data
+  end
+
+  def convert_to_boolean(hash)
+    hash.each {|key, value|
+      if value.is_a?(Hash)
+        convert_to_boolean(value)
+      elsif value.is_a?(Array)
+        value.each do |v|
+          convert_to_boolean(v)
+        end
+      else
+        if value == "true"
+          hash[key] = true
+        elsif value == "false"
+          hash[key] = false
+        end
+      end
+    }
   end
 end
