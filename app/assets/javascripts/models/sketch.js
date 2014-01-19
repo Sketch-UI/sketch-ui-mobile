@@ -3,20 +3,19 @@ var Sketch = (function() {
     var save = function(attrs, callback) {
         $.ajax({
             type: "POST",
-            url: "/sketches",
+            url: "/projects/" + attrs.projectId + "/sketches/" + attrs.sketchId,
             dataType: "json",
             data: {
-                identifier: attrs.identifier,
                 data: attrs.data
             },
             success: callback
         });
     };
 
-    var find = function(id, callback){
+    var find = function(attrs, callback){
         $.ajax({
             type: "GET",
-            url: "/sketches/" + id + "/data",
+            url: "/projects/" + attrs.projectId + "/sketches/" + attrs.sketchId,
             dataType: "json",
             success: callback
         });

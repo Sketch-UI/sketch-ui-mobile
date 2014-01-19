@@ -1,26 +1,16 @@
 # -*- encoding : utf-8 -*-
 class SketchesController < ApplicationController
-  def home
-  end
-
-  def new
-    @sketch = Sketch.create(identifier: SecureRandom.hex)
-    redirect_to :action => 'show', :id => @sketch.identifier
-  end
-
-  def show
-    @sketch_identifier = params[:id]
-  end
-
   def data
-    sketch = Sketch.find_by(identifier: params[:id])
+    project = Project.find_by(project_id: params[:project_id])
+    sketch = project.sketches.select{|s| s.sketch_id == params[:id]}.first
     render :json => {
         controls_data: sketch.data
     }
   end
 
-  def create
-    sketch = Sketch.find_by(identifier: params[:identifier])
+  def save
+    project = Project.find_by(project_id: params[:project_id])
+    sketch = project.sketches.select{|s| s.sketch_id == params[:id]}.first
     sketch.data = parse_data
     sketch.save
     render :json => {}

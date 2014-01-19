@@ -1,8 +1,11 @@
 var SketchesController = (function() {
 
+    var url = window.location.href;
+    var projectId = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('#'));
+    var sketchId = url.substring(url.lastIndexOf('#') + 1)
+
     var show = function(){
-        sketchId = $("#identifier").val();
-        Sketch.find(sketchId, function(data){
+        Sketch.find({sketchId: this.sketchId, projectId: this.projectId}, function(data){
             if(data.controls_data){
                 DrawingBoard.controls[1].set(data.controls_data[0].properties);
                 var drawingBoardPositions = $("#drawing-board")[0].getBoundingClientRect();
@@ -62,13 +65,15 @@ var SketchesController = (function() {
             }
         }
 
-        Sketch.save({ identifier: $("#identifier").val(), data: sketchData}, function(data){
+        Sketch.save({sketchId: this.sketchId, projectId: this.projectId, data: sketchData}, function(data){
             Loader.stop();
         });
     };
 
     return {
         show: show,
+        projectId: projectId,
+        sketchId: sketchId,
         save: save
     };
 
