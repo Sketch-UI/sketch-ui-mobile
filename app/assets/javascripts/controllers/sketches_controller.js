@@ -70,11 +70,20 @@ var SketchesController = (function() {
         });
     };
 
+    var add = function(){
+        Loader.start();
+
+        Sketch.add({projectId: this.projectId, sketchName: $("#new-sketch-name").val()}, function(data){
+            Loader.stop();
+        });
+    };
+
     return {
         show: show,
         projectId: projectId,
         sketchId: sketchId,
-        save: save
+        save: save,
+        add: add
     };
 
 })();

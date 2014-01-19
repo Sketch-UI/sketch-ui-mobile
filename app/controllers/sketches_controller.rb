@@ -1,5 +1,12 @@
 # -*- encoding : utf-8 -*-
 class SketchesController < ApplicationController
+  def add
+    project = Project.find_by(project_id: params[:project_id])
+    sketch_id = project.sketches.last.sketch_id.to_i + 1
+    sketch = project.sketches.create(sketch_id: sketch_id, name: params[:sketch_name])
+    render :json => sketch
+  end
+
   def data
     project = Project.find_by(project_id: params[:project_id])
     sketch = project.sketches.select{|s| s.sketch_id == params[:id]}.first

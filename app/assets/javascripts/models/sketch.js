@@ -21,9 +21,22 @@ var Sketch = (function() {
         });
     };
 
+    var add = function(attrs, callback){
+        $.ajax({
+            type: "POST",
+            url: "/projects/" + attrs.projectId + "/sketches/add",
+            dataType: "json",
+            data: {
+                sketch_name: attrs.sketchName
+            },
+            success: callback
+        });
+    };
+
     return {
         save: save,
-        find: find
+        find: find,
+        add: add
     };
 
 })();
