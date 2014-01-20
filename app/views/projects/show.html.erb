@@ -19,10 +19,7 @@
     <ul class="nav navbar-nav">
       <li class="dropdown">
         <a href="javascript:void(0)" id="sketches-toggle" data-toggle="dropdown">Sketches <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <!--<li class="divider"></li>-->
-          <li><a href="#1">Homepage</a></li>
-          <li><a href="javascript:void(0)" id="new-sketch-link">Add New</a></li>
+        <ul class="dropdown-menu" id="sketches-dropdown">
         </ul>
       </li>
       <li class="dropdown">
@@ -74,3 +71,10 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script id='sketches-dropdown-template' type='text/ractive'>
+   {{#sketches}}
+   <li class="{{#active}}active{{/active}}"><a href="#{{sketch_id}}">{{name}}</a></li>
+   {{/sketches}}
+  <li><a href="javascript:void(0)" id="new-sketch-link">Add New</a></li>
+</script>

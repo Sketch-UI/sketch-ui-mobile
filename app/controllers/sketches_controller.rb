@@ -11,7 +11,8 @@ class SketchesController < ApplicationController
     project = Project.find_by(project_id: params[:project_id])
     sketch = project.sketches.select{|s| s.sketch_id == params[:id]}.first
     render :json => {
-        controls_data: sketch.data
+        controls_data: sketch.data,
+        sketches: project.sketches.map{|s| {name: s.name, sketch_id: s.sketch_id, active: s.sketch_id == params[:id]}}
     }
   end
 

@@ -5,6 +5,7 @@ var SketchesController = (function() {
 
     var show = function(sketchId){
         Sketch.find({sketchId: sketchId, projectId: this.projectId}, function(data){
+            SketchDropdown.create(data.sketches);
             DrawingBoard.clear();
             if(data.controls_data){
                 DrawingBoard.controls[1].set(data.controls_data[0].properties);

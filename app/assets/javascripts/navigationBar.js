@@ -9,7 +9,7 @@ var NavigationBar = (function() {
             PreviewBinding.trigger();
         });
 
-        $("#new-sketch-link").click(function(ev){
+        $( "#sketches-dropdown" ).on( "click", "#new-sketch-link", function() {
             $('#new-sketch-modal').modal("show");
         });
 
