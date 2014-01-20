@@ -2,10 +2,10 @@ var SketchesController = (function() {
 
     var url = window.location.href;
     var projectId = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('#'));
-    var sketchId = url.substring(url.lastIndexOf('#') + 1)
 
-    var show = function(){
-        Sketch.find({sketchId: this.sketchId, projectId: this.projectId}, function(data){
+    var show = function(sketchId){
+        Sketch.find({sketchId: sketchId, projectId: this.projectId}, function(data){
+            DrawingBoard.clear();
             if(data.controls_data){
                 DrawingBoard.controls[1].set(data.controls_data[0].properties);
                 var drawingBoardPositions = $("#drawing-board")[0].getBoundingClientRect();
@@ -65,7 +65,7 @@ var SketchesController = (function() {
             }
         }
 
-        Sketch.save({sketchId: this.sketchId, projectId: this.projectId, data: sketchData}, function(data){
+        Sketch.save({sketchId: window.location.href.substring(window.location.href.lastIndexOf('#') + 1), projectId: this.projectId, data: sketchData}, function(data){
             Loader.stop();
         });
     };
@@ -75,13 +75,14 @@ var SketchesController = (function() {
 
         Sketch.add({projectId: this.projectId, sketchName: $("#new-sketch-name").val()}, function(data){
             Loader.stop();
+            $("li #new-sketch-link").prepend("<li><a href='#" + data.sketchId + "'> " + data.name + " </a></li>")
+            window.location.hash = data.sketch_id;
         });
     };
 
     return {
         show: show,
         projectId: projectId,
-        sketchId: sketchId,
         save: save,
         add: add
     };
