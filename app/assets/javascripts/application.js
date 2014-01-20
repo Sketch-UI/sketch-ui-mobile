@@ -12,6 +12,6 @@
 $(document).ready(function() {
     if($("#toolbox-template").length>0){
         DrawingBoard.init();
-        SketchesController.show();
+        Routing.init();
     }
 });

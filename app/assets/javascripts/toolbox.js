@@ -22,7 +22,11 @@ var Toolbox = (function() {
         $("#drawing-board").droppable({
             accept: '#controls-container ul li a',
             drop: function(event, ui) {
-                DrawingBoard.addControl($(ui.draggable).data("metadata-id"), ui.position, null);
+                var position = {
+                    top: ui.position.top,
+                    left: ui.position.left - 200
+                }
+                DrawingBoard.addControl($(ui.draggable).data("metadata-id"), position, null);
                 _this.showPropertyWindow();
             }
         });

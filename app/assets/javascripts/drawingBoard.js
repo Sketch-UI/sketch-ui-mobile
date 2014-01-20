@@ -120,6 +120,13 @@ var DrawingBoard = (function() {
         });
     };
 
+    var clear = function(){
+        $("#drawing-board").html("");
+        for(var i=2; i<=this.controlId; i++){
+            delete this.controls[i];
+        }
+    };
+
     return {
         init: init,
         create: create,
@@ -128,7 +135,8 @@ var DrawingBoard = (function() {
         bindControl: bindControl,
         bindPropertyWindow: bindPropertyWindow,
         openPropertyWindow: openPropertyWindow,
-        bindDeleteControl: bindDeleteControl
+        bindDeleteControl: bindDeleteControl,
+        clear: clear
     };
 
 })();

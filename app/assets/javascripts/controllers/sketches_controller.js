@@ -1,45 +1,91 @@
 var SketchesController = (function() {
 
-    var show = function(){
-        sketchId = $("#identifier").val();
-        Sketch.find(sketchId, function(data){
+    var url = window.location.href;
+    var projectId = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('#'));
+
+    var show = function(sketchId){
+        Sketch.find({sketchId: sketchId, projectId: this.projectId}, function(data){
+            SketchDropdown.create(data.sketches);
+            DrawingBoard.clear();
             if(data.controls_data){
-                for(var i=0; i<data.controls_data.length; i++){
-                    DrawingBoard.addControl(data.controls_data[i].type, data.controls_data[i].position, data.controls_data[i].properties);
+                DrawingBoard.controls[1].set(data.controls_data[0].properties);
+                var drawingBoardPositions = $("#drawing-board")[0].getBoundingClientRect();
+
+                for(var i=1; i<data.controls_data.length; i++){
+//                    var sidebarLeft = 0;
+//                    if($("#toolbox-left").is(":visible")){
+//                        sidebarLeft = 260;
+//                    }
+//
+                    var postion = {
+                        top: drawingBoardPositions.top + parseInt(data.controls_data[i].position.top),
+                        left: drawingBoardPositions.left + parseInt(data.controls_data[i].position.left)
+                    }
+
+                    DrawingBoard.addControl(data.controls_data[i].type, postion, data.controls_data[i].properties);
                 }
             }
         });
     };
 
     var save = function(){
+        Loader.start();
+
         var controls = DrawingBoard.controls,
-            sketchData = [];
+            sketchData = [],
+            drawingBoardPositions = $("#drawing-board")[0].getBoundingClientRect();
 
         for(var key in controls){
             if(key=="1"){
-
+                var controlData = {
+                    id: key,
+                    properties: controls[key].get()
+                }
+                sketchData.push(controlData);
             }
             else{
                 var $control = $("#drawing-board .control[data-control-id='"+key+"']");
+
+                var sidebarLeft = 0;
+                if($("#toolbox-left").is(":visible")){
+                    sidebarLeft = 260;
+                }
+
+                var position = {
+                    top: $control.position().top - drawingBoardPositions.top,
+                    left: $control.position().left - (drawingBoardPositions.left - sidebarLeft)
+                }
+
                 var controlData = {
                     id: key,
                     type: $control.data("metadata-id"),
                     properties: controls[key].get(),
-                    position: $control.position()
+                    position: position
                 }
-                sketchData.push(controlData)
+                sketchData.push(controlData);
             }
         }
 
-        Loader.start();
-        Sketch.save({ identifier: $("#identifier").val(), data: sketchData}, function(data){
+        Sketch.save({sketchId: window.location.href.substring(window.location.href.lastIndexOf('#') + 1), projectId: this.projectId, data: sketchData}, function(data){
             Loader.stop();
+        });
+    };
+
+    var add = function(){
+        Loader.start();
+
+        Sketch.add({projectId: this.projectId, sketchName: $("#new-sketch-name").val()}, function(data){
+            Loader.stop();
+            $("li #new-sketch-link").prepend("<li><a href='#" + data.sketchId + "'> " + data.name + " </a></li>")
+            window.location.hash = data.sketch_id;
         });
     };
 
     return {
         show: show,
-        save: save
+        projectId: projectId,
+        save: save,
+        add: add
     };
 
 })();

@@ -3,28 +3,40 @@ var Sketch = (function() {
     var save = function(attrs, callback) {
         $.ajax({
             type: "POST",
-            url: "/sketches",
+            url: "/projects/" + attrs.projectId + "/sketches/" + attrs.sketchId,
             dataType: "json",
             data: {
-                identifier: attrs.identifier,
                 data: attrs.data
             },
             success: callback
         });
     };
 
-    var find = function(id, callback){
+    var find = function(attrs, callback){
         $.ajax({
             type: "GET",
-            url: "/sketches/" + id + "/data",
+            url: "/projects/" + attrs.projectId + "/sketches/" + attrs.sketchId,
             dataType: "json",
+            success: callback
+        });
+    };
+
+    var add = function(attrs, callback){
+        $.ajax({
+            type: "POST",
+            url: "/projects/" + attrs.projectId + "/sketches/add",
+            dataType: "json",
+            data: {
+                sketch_name: attrs.sketchName
+            },
             success: callback
         });
     };
 
     return {
         save: save,
-        find: find
+        find: find,
+        add: add
     };
 
 })();
