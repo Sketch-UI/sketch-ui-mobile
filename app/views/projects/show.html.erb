@@ -31,6 +31,7 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li><a href="javascript:void(0)" id="clear-sketch-link">Clear Sketch</a></li>
       <li><a href="javascript:void(0)" id="preview-link">Preview</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
@@ -67,6 +68,19 @@
           <input type="text" class="form-control" id="new-sketch-name" name="new-sketch-name" placeholder="Enter Sketch Name">
         </div>
         <button type="button" class="btn btn-primary" id="create-sketch-link">Create</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="clear-sketch-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>
+          Are you sure you want to clear contents of this sketch ?
+        </p>
+        <button type="button" class="btn btn-primary" id="clear-sketch-modal-submit">Yes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

@@ -17,6 +17,15 @@ var NavigationBar = (function() {
             SketchesController.add();
             $('#new-sketch-modal').modal("hide");
         });
+
+        $("#clear-sketch-link").click(function(ev){
+            $("#clear-sketch-modal").modal("show");
+        });
+
+        $("#clear-sketch-modal-submit").click(function(ev){
+            DrawingBoard.clear();
+            $("#clear-sketch-modal").modal("hide");
+        })
     };
 
     return {
