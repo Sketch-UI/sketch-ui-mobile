@@ -8,5 +8,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project_id = params[:id]
+    project = Project.find_by(project_id: params[:id])
+    @preview_url = "/preview/#{project.preview_id}#1"
+    @edit_url = "/projects/#{project.project_id}#1"
   end
 end
