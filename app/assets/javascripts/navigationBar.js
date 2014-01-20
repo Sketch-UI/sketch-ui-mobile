@@ -25,7 +25,17 @@ var NavigationBar = (function() {
         $("#clear-sketch-modal-submit").click(function(ev){
             DrawingBoard.clear();
             $("#clear-sketch-modal").modal("hide");
-        })
+        });
+
+        $(".share-link").click(function(ev){
+            $('#share-url-modal').modal("show");
+            var port = "";
+            if(window.location.port != ""){
+                port = ":" + window.location.port;
+            }
+
+            $("#share-url").val("http://" + window.location.hostname + port + $(ev.currentTarget).data("href"));
+        });
     };
 
     return {
