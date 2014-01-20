@@ -61,3 +61,6 @@ controls:
   VerticalMenuControl:
     display_name: Vertical Menu
     category: all
+  PanelControl:
+    display_name: Panels
+    category: all
