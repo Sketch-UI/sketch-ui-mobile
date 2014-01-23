@@ -20,19 +20,13 @@ var DrawingBoard = (function() {
         NavigationBar.init();
         $("#undo-sketch-link").click(function(ev){
             _this.historyIndex = _this.historyIndex-1;
-            for(var i=2; i<=_this.controlId; i++){
-                delete _this.controls[i];
-                $("#drawing-board").html("");
-            }
+            _this.clear();
             $("#drawing-board").html(historyTracker[_this.historyIndex]);
         });
 
         $("#redo-sketch-link").click(function(ev){
             _this.historyIndex = _this.historyIndex+1;
-            for(var i=2; i<=_this.controlId; i++){
-                delete _this.controls[i];
-                $("#drawing-board").html("");
-            }
+            _this.clear();
             $("#drawing-board").html(historyTracker[_this.historyIndex]);
         });
     };
