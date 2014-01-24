@@ -2,3 +2,6 @@ controls:
   CheckBoxControl:
     display_name: Checkbox
     category: all
+  HeaderControl:
+    display_name: Header
+    category: all
