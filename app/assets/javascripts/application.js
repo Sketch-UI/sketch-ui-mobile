@@ -7,7 +7,6 @@
 //= require Ractive/Ractive
 //= require draggabilly/draggabilly
 //= require sidr/jquery.sidr.min
-//= require ionic/js/ionic
 //= require_tree .
 
 $(document).ready(function() {
