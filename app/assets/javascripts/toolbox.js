@@ -23,8 +23,8 @@ var Toolbox = (function() {
             accept: '#controls-container ul li a',
             drop: function(event, ui) {
                 var position = {
-                    top: ui.position.top,
-                    left: ui.position.left - 200
+                    top: 0,
+                    left: 0
                 }
                 DrawingBoard.addControl($(ui.draggable).data("metadata-id"), position, null);
                 _this.showPropertyWindow();
