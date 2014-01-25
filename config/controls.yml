@@ -9,3 +9,5 @@ controls:
     display_name: Icons
   LabelControl:
     display_name: Label
+  CheckboxControl:
+    display_name: Checkbox

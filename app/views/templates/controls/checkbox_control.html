@@ -1,0 +1,17 @@
+<script id='CheckboxControl-control-template' type='text/ractive'>
+ <div class='control' data-control-id='{{controlId}}' data-metadata-id='CheckboxControl'>
+    <div style="margin-left: 18px;">
+        <label class="checkbox">
+           <input type="checkbox" checked = "{{selected}}">
+         </label>
+    </div>
+ </div>
+ <style>
+ .control .checkbox input:before {
+    border: 1px solid {{color}};
+ }
+ .control .checkbox input:checked:before {
+    background: {{color}};
+ }
+ </style>
+</script>
