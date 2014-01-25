@@ -1,6 +1,4 @@
 controls:
-  CheckBoxControl:
-    display_name: Checkbox
   HeaderControl:
     display_name: Header
   ButtonControl:
