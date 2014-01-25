@@ -13,3 +13,5 @@ controls:
     display_name: Checkbox
   ListControl:
     display_name: List
+  ToggleControl:
+    display_name: Toggle Control
