@@ -37,6 +37,7 @@ var DrawingBoard = (function() {
             }
             $("#drawing-board").html(historyTracker[_this.historyIndex]);
         });
+        Toolbox.showControlWindow();
     };
 
     var create = function() {
