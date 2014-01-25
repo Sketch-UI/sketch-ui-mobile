@@ -20,9 +20,10 @@ var Toolbox = (function() {
         $("#drawing-board").droppable({
             accept: '#controls-container ul li a',
             drop: function(event, ui) {
+                var drawingBoardPositions = $("#drawing-board")[0].getBoundingClientRect();
                 var position = {
-                    top: 0,
-                    left: 0
+                    top: ui.position.top - drawingBoardPositions.top,
+                    left: ui.position.left - drawingBoardPositions.left
                 }
                 DrawingBoard.addControl($(ui.draggable).data("metadata-id"), position, null);
                 _this.showPropertyWindow();
