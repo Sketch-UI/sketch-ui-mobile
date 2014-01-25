@@ -1,0 +1,9 @@
+<script id='ListControl-control-template' type='text/ractive'>
+ <div class='control' data-control-id='{{controlId}}' data-metadata-id='ListControl'>
+   <ul class="list" style="width: {{width}}px;">
+         {{#listLabels :i}}
+         <li class="item">{{.}}</li>
+         {{/listLabels}}
+     </div>
+ </div>
+</script>

@@ -11,3 +11,5 @@ controls:
     display_name: Label
   CheckboxControl:
     display_name: Checkbox
+  ListControl:
+    display_name: List
