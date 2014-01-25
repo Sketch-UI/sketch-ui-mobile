@@ -10,3 +10,6 @@ controls:
   RangeControl:
     display_name: Range
     category: all
+  IconControl:
+    display_name: Icons
+    category: all
