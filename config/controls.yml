@@ -10,4 +10,6 @@ controls:
     category: all
   RangeControl:
     display_name: Range
+  LabelControl:
+    display_name: Label
     category: all
