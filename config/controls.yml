@@ -4,6 +4,7 @@ controls:
     category: all
   HeaderControl:
     display_name: Header
+    category: all
   ButtonControl:
     display_name: Button
     category: all
