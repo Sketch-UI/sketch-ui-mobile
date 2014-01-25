@@ -15,6 +15,17 @@ var DrawingBoard = (function() {
         this.setupPropertyWindow();
         PreviewBinding.init();
         NavigationBar.init();
+        $("#undo-sketch-link").click(function(ev){
+            _this.historyIndex = _this.historyIndex-1;
+            _this.clear();
+            $("#drawing-board").html(historyTracker[_this.historyIndex]);
+        });
+
+        $("#redo-sketch-link").click(function(ev){
+            _this.historyIndex = _this.historyIndex+1;
+            _this.clear();
+            $("#drawing-board").html(historyTracker[_this.historyIndex]);
+        });
     };
 
     var create = function() {
