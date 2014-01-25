@@ -4,7 +4,10 @@ window.ControlsMetadata['ButtonControl'] = {
       button_label: "Button",
       bgcolor: "#428bca",
       color: "#ffffff",
-      width: 90
+      width: 90,
+      height: 25,
+      font_weight: "normal",
+      font_style: "normal"
   },
   propertyWindowCallback: function(ractiveControl){}
 };

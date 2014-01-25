@@ -4,6 +4,9 @@
   background:  image-url('controls/RangeControl.png');
   background-size:contain;
   background-repeat:no-repeat;
+  input[type="range"]::-webkit-slider-thumb:before {
+    background: #1bbd1c;
+  }
 }
 
 .range{
