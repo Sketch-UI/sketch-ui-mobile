@@ -31,7 +31,7 @@ task :generate_control_files do
   templates_file.close
 
 
-  properties_file = File.new("#{Rails.root}/app/views/templates/property/#{metadata_file_name.underscore}.html", "w")
+  properties_file = File.new("#{Rails.root}/app/views/templates/property/#{metadata_file_name.underscore.sub("control", "property")}.html", "w")
   properties_file.puts("<script id='#{control_metadata_id}-property-template' type='text/ractive'>")
   properties_file.puts(" <div class='form-group properties' data-control-id='{{controlId}}'>")
   properties_file.puts("   <!--<input type='text' class='property' value='{{dummy_property}}'>-->")
