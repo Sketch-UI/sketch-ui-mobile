@@ -1,20 +1,26 @@
 <script id='ToggleControl-control-template' type='text/ractive'>
- <div class='control' data-control-id='{{controlId}}' data-metadata-id='ToggleControl'  style="width: {{width}}px;">
-     <ul class="list">
-         {{#items}}
-         <li class="item item-toggle">
-           {{text}}
-             <label class="toggle">
-                 <input type="checkbox" checked="">
-                 <div class="track">
-                     <div class="handle"></div>
-                 </div>
-             </label>
-         </li>
-         {{/items}}
-     </ul>
-
-
-
- </div>
+    <div class='control' data-control-id='{{controlId}}' data-metadata-id='ToggleControl' style="width: {{width}}px;">
+        <ul class="list">
+            {{#items}}
+            <li class="item item-toggle">
+                {{text}}
+                <label class="toggle">
+                    <input type="checkbox" checked="">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            {{/items}}
+        </ul>
+        <style type="text/css">
+            div[data-control-id='{{controlId}}']  .toggle .track {
+            border: solid 2px {{off_color}};
+            background-color: {{off_color}};
+            }
+            div[data-control-id='{{controlId}}'] .toggle input:checked + .track {
+            border-color: {{on_color}};
+            background-color: {{on_color}}; }
+        </style>
+    </div>
 </script>

@@ -7,7 +7,9 @@ window.ControlsMetadata['ToggleControl'] = {
             { text: "Item2"},
             { text: "Item3"},
             { text: "Item4"}
-        ]
+        ]                     ,
+        on_color: '#4a87ee' ,
+        off_color: '#e5e5e5'
 
     },
     propertyWindowCallback: function (ractiveControl) {
