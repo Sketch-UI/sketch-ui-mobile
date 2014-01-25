@@ -1,11 +1,14 @@
 var DrawingBoard = (function() {
     var controls = null;
     var controlId = null;
+    var historyTracker=[];
+    var historyIndex=null;
     var activePropertyWindow = null;
 
     var init = function() {
         this.controlId = 0;
-        this.controls = {};
+        this.historyIndex=-1;
+        this.controls = [];
         this.create();
         var _this = this;
 
@@ -18,19 +21,26 @@ var DrawingBoard = (function() {
         $("#undo-sketch-link").click(function(ev){
             _this.historyIndex = _this.historyIndex-1;
             _this.clear();
+            for(var i=2; i<=_this.controlId; i++){
+                delete _this.controls[i];
+                $("#drawing-board").html("");
+            }
             $("#drawing-board").html(historyTracker[_this.historyIndex]);
         });
 
         $("#redo-sketch-link").click(function(ev){
             _this.historyIndex = _this.historyIndex+1;
             _this.clear();
+            for(var i=2; i<=_this.controlId; i++){
+                delete _this.controls[i];
+                $("#drawing-board").html("");
+            }
             $("#drawing-board").html(historyTracker[_this.historyIndex]);
         });
     };
 
     var create = function() {
         this.controlId = this.controlId + 1;
-
         var initialData = jQuery.extend(true, {}, ControlsMetadata["DrawingBoardControl"].initialData);
         initialData["controlId"] = this.controlId;
 
@@ -67,14 +77,14 @@ var DrawingBoard = (function() {
 
     var addControl = function(metadataId, position, data) {
         this.controlId = this.controlId + 1;
-
         if(!data){
             data = jQuery.extend(true, {}, ControlsMetadata[metadataId].initialData);
         }
-
         data["controlId"] = this.controlId;
-
         this.controls[this.controlId] = Control.create(metadataId, position, data);
+        var tempHistory = $("#drawing-board").html();
+        this.historyIndex = this.historyIndex+1;
+        historyTracker[this.historyIndex]= tempHistory;
         this.bindDeleteControl(this.controlId);
         this.activePropertyWindow = PropertyWindow.create(metadataId, this.controls[this.controlId].get(), this.controls[this.controlId]);
         this.bindControl(this.controlId);
@@ -128,6 +138,9 @@ var DrawingBoard = (function() {
             ev.stopPropagation();
             $("#drawing-board .control[data-control-id='" + controlId + "']").remove();
             delete _this.controls[controlId];
+            var tempHistory = $("#drawing-board").html();
+            _this.historyIndex = _this.historyIndex+1;
+            historyTracker[_this.historyIndex]= tempHistory;
         });
     };
 
