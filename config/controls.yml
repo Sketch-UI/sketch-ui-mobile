@@ -7,3 +7,6 @@ controls:
   ButtonControl:
     display_name: Button
     category: all
+  RangeControl:
+    display_name: Range
+    category: all
