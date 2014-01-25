@@ -1,30 +1,11 @@
-.control{
-  /*!
- * Copyright 2014 Drifty Co.
- * http://drifty.com/
- *
- * Ionic, v0.9.20
- * A powerful HTML5 mobile app framework.
- * http://ionicframework.com/
- *
- * By @maxlynch, @helloimben, @adamdbradley <3
- *
- * Licensed under the MIT license. Please see LICENSE for more information.
- *
- */
-  /*!
-  Ionicons, v1.4.1
-  Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
-  https://twitter.com/helloimben  https://twitter.com/ionicframework
-  MIT License: https://github.com/driftyco/ionicons
-*/
-  @font-face {
-    font-family: "Ionicons";
-    src: url("../fonts/ionicons.eot?v=1.4.1");
-    src: url("../fonts/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), url("../fonts/ionicons.ttf?v=1.4.1") format("truetype"), url("../fonts/ionicons.woff?v=1.4.1") format("woff"), url("../fonts/ionicons.svg?v=1.4.1#Ionicons") format("svg");
-    font-weight: normal;
-    font-style: normal; }
+@font-face {
+  font-family: "Ionicons";
+  src: url(asset_path('ionicons.eot?v=1.4.1'));
+  src: url(asset_path("ionicons.eot?v=1.4.1#iefix")) format("embedded-opentype"), url(asset_path("ionicons.ttf?v=1.4.1")) format("truetype"), url(asset_path("ionicons.woff?v=1.4.1")) format("woff"), url(asset_path("ionicons.svg?v=1.4.1#Ionicons")) format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
+.control{
   .ion, .ion-loading-a,
   .ion-loading-b,
   .ion-loading-c,

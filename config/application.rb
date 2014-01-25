@@ -29,6 +29,7 @@ module SketchUi
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets")
     config.assets.paths << Rails.root.join("vendor", "assets")
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile += %w(*js *css *.png *.jpg *.jpeg *.gif *otf *.ttf *.woff *.eot *.svg)
   end
 end
