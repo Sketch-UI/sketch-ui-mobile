@@ -1,20 +1,16 @@
 desc 'generate control files'
 task :generate_control_files do
 
-  puts "Enter Control Category (#{CONTROL_CATEGORIES.each_with_index.map{|c, i| "#{i}-#{c} "}.join(",")})"
-  category_index = STDIN.gets.chomp.to_i
-
   puts "Enter Control ID (Camel case, must be unique Eg: ButtonControl)"
   control_metadata_id = STDIN.gets.chomp
 
   puts "Enter Display name for control"
   control_display_name = STDIN.gets.chomp
 
-  category_file = File.open("#{Rails.root}/config/controls.yml", 'a')
-  category_file.puts("  #{control_metadata_id}:")
-  category_file.puts("    display_name: #{control_display_name}")
-  category_file.puts("    category: #{CONTROL_CATEGORIES[category_index]}")
-  category_file.close
+  controls_file = File.open("#{Rails.root}/config/controls.yml", 'a')
+  controls_file.puts("  #{control_metadata_id}:")
+  controls_file.puts("    display_name: #{control_display_name}")
+  controls_file.close
 
   metadata_file_name = control_metadata_id.dup
   metadata_file_name = metadata_file_name.slice!(0).downcase + metadata_file_name

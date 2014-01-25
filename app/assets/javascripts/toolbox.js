@@ -13,8 +13,6 @@ var Toolbox = (function() {
         this.bindControls();
 
         $("#controls-container ul li a").draggable({ helper:'clone'});
-
-        CategoryListBinding.init();
     };
 
     var bindControls = function() {

@@ -12,7 +12,6 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-CONTROL_CATEGORIES = YAML.load(File.read('config/categories.yml'))["categories"]
 CONTROLS = YAML.load(File.read('config/controls.yml'))["controls"]
 
 module SketchUi
