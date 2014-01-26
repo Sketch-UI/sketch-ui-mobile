@@ -34,4 +34,9 @@ group :development, :test do
   gem 'rake'
   gem 'travis-lint'
   gem 'fuubar'
+  gem 'spinach-rails'
+  gem 'headless'
+  gem 'capybara-webkit'
+  gem 'capybara-page-object'
+  gem 'selenium-webdriver'
 end
