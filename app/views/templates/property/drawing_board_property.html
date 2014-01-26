@@ -1,4 +1,16 @@
 <script id='DrawingBoardControl-property-template' type='text/ractive'>
   <div class='form-group properties' data-control-id='{{controlId}}'>
+   <label>Standard Background</label>
+    <div class="btn-group standard-color-picker" data-value="bgcolor">
+        <button type="button" class="btn btn-default" data-color="#f3f1f0"></button>
+        <button type="button" class="btn btn-default" data-color="#33465d"></button>
+        <button type="button" class="btn btn-default" data-color="#40525e"></button>
+        <button type="button" class="btn btn-default" data-color="#626465"></button>
+        <button type="button" class="btn btn-default" data-color="#013d7f"></button>
+        <button type="button" class="btn btn-default" data-color="#000000"></button>
+        <button type="button" class="btn btn-default" data-color="#ffffff"></button>
+    </div>
+   <label>Custom Background</label>
+   <input type="text" class="property color-property" value="{{bgcolor}}"/>
   </div>
 </script>
