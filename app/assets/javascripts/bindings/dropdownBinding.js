@@ -1,7 +1,7 @@
 var DropdownBinding = (function() {
 
     var init = function(controlHandle, propertyHandle) {
-        $("#properties-container select.property").each(function(index, element){
+        $("#properties-container select.property:not(.font-property)").each(function(index, element){
             $(element).change(function (ev) {
                 propertyHandle.set($(element).attr("data-value"), $(element).val());
                 controlHandle.set(propertyHandle.get());

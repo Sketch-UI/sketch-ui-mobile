@@ -7,6 +7,7 @@
 //= require Ractive/Ractive
 //= require draggabilly/draggabilly
 //= require sidr/jquery.sidr.min
+//= require formhelpers/bootstrap-formhelpers
 //= require_tree .
 
 $(document).ready(function() {

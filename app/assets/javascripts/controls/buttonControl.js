@@ -7,7 +7,9 @@ window.ControlsMetadata['ButtonControl'] = {
       width: 90,
       height: 25,
       font_weight: "normal",
-      font_style: "normal"
+      font_style: "normal",
+      font: "Arial"
   },
-  propertyWindowCallback: function(ractiveControl){}
+  propertyWindowCallback: function(ractiveControl){
+  }
 };
