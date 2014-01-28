@@ -15,3 +15,6 @@ controls:
     display_name: List
   ToggleControl:
     display_name: Toggle Control
+  TextboxControl:
+    display_name: Textbox
+
