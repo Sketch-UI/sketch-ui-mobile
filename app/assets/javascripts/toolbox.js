@@ -25,7 +25,7 @@ var Toolbox = (function() {
                     top: ui.position.top - drawingBoardPositions.top,
                     left: ui.position.left - drawingBoardPositions.left
                 }
-                DrawingBoard.addControl($(ui.draggable).data("metadata-id"), position, null);
+                DrawingBoard.addControl($(ui.draggable).data("metadata-id"), position, null, false);
                 _this.showPropertyWindow();
             }
         });

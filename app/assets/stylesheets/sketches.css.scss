@@ -101,9 +101,13 @@ input.property, select.property{
   margin-bottom: 20px;
 }
 
-#drawing-board .control * {
-  cursor: move;
+body:not(.preview){
+  #drawing-board .control * {
+    cursor: move;
+  }
 }
+
+
 
 .toolbox-tab-container {
   overflow-y: scroll;

@@ -12,6 +12,12 @@ var PreviewBinding = (function() {
     var trigger = function(){
         $("#toolbox-left").toggle();
         $("body").toggleClass("preview");
+
+        var previewMode = false;
+        if($("body").hasClass("preview")){
+            previewMode = true;
+        }
+        SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), previewMode);
     };
 
     return {

@@ -3,7 +3,7 @@ var SketchesController = (function() {
     var url = window.location.href;
     var projectId = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('#'));
 
-    var show = function(sketchId){
+    var show = function(sketchId, previewMode){
         Sketch.find({sketchId: sketchId, projectId: this.projectId}, function(data){
             SketchDropdown.create(data.sketches);
             DrawingBoard.clear();
@@ -22,7 +22,7 @@ var SketchesController = (function() {
                         left: drawingBoardPositions.left + parseInt(data.controls_data[i].position.left)
                     }
 
-                    DrawingBoard.addControl(data.controls_data[i].type, postion, data.controls_data[i].properties);
+                    DrawingBoard.addControl(data.controls_data[i].type, postion, data.controls_data[i].properties, previewMode);
                 }
             }
         });

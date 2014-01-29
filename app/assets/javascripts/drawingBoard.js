@@ -76,20 +76,23 @@ var DrawingBoard = (function() {
 
     };
 
-    var addControl = function(metadataId, position, data) {
+    var addControl = function(metadataId, position, data, previewMode) {
         this.controlId = this.controlId + 1;
         if(!data){
             data = jQuery.extend(true, {}, ControlsMetadata[metadataId].initialData);
         }
         data["controlId"] = this.controlId;
-        this.controls[this.controlId] = Control.create(metadataId, position, data);
+        this.controls[this.controlId] = Control.create(metadataId, position, data, previewMode);
         var tempHistory = $("#drawing-board").html();
         this.historyIndex = this.historyIndex+1;
         historyTracker[this.historyIndex]= tempHistory;
-        this.bindDeleteControl(this.controlId);
-        this.activePropertyWindow = PropertyWindow.create(metadataId, this.controls[this.controlId].get(), this.controls[this.controlId]);
-        this.bindControl(this.controlId);
-        this.bindPropertyWindow();
+
+        if(!previewMode){
+            this.bindDeleteControl(this.controlId);
+            this.activePropertyWindow = PropertyWindow.create(metadataId, this.controls[this.controlId].get(), this.controls[this.controlId]);
+            this.bindControl(this.controlId);
+            this.bindPropertyWindow();
+        }
     };
 
     var bindControl = function(controlId){
