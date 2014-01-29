@@ -1,6 +1,6 @@
 controls:
-  HeaderControl:
-    display_name: Header
+  ToolbarControl:
+    display_name: Toolbar
   ButtonControl:
     display_name: Button
   RangeControl:
@@ -17,5 +17,3 @@ controls:
     display_name: Toggle Control
   TextboxControl:
     display_name: Textbox
-  ToolbarControl:
-    display_name: Toolbar
