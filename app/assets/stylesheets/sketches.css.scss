@@ -9,6 +9,10 @@ body{
 
 #properties-container {
   padding: 15px;
+
+  .slider-property{
+    width: 230px;
+  }
 }
 
 input.property, select.property, textarea.property{
