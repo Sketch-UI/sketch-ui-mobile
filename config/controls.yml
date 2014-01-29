@@ -19,3 +19,5 @@ controls:
     display_name: Textbox
   ButtongroupControl:
     display_name: Button Group
+  ProgressBarControl:
+    display_name: Progress Bar
