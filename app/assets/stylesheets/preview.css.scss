@@ -1,13 +1,18 @@
 .preview{
-  background-color: #ffffff !important;
+  background-color: lightgray !important;
   position: static !important;
   margin-left:auto !important;
   margin-right:auto !important;
 
-  #drawing-board{
-    box-shadow: none !important;
-    background: none;
+  #phone{
+    margin-top: 20px;
+    #drawing-board{
+      box-shadow: none !important;
+      background: none;
+    }
   }
+
+
   #header{
     display: none !important;
   }
