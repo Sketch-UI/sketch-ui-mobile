@@ -11,7 +11,7 @@ controls:
     display_name: Label
   CheckboxControl:
     display_name: Checkbox
-    ListControl:
+  ListControl:
     display_name: List
   ToggleControl:
     display_name: Toggle Control
