@@ -6,10 +6,11 @@ window.ControlsMetadata['ButtongroupControl'] = {
             { text: "Item1"},
             { text: "Item2"},
             { text: "Item3"},
-            { text: "Item4"}
         ],
         bg_color: '#4a87ee',
-        color: '#e5e5e5'
+        color: '#e5e5e5', font_weight: "normal",
+        font_style: "normal",
+        font: "Arial"
 
     },
 
