@@ -1,21 +1,28 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
-window.ControlsMetadata['ListControl'] = {
+window.ControlsMetadata['CheckboxListControl'] = {
   initialData: {
-    list_items:"Item1,Item2",
-    listLabels: ["Item1","Item2"]
+      height: "50",
+      width: "328",
+      rows: "4",
+      items: [
+          { item: ""},
+          { item: ""},
+          { item: ""},
+          { item: ""}
+      ]
   },
-    propertyWindowCallback: function(ractiveControl){
+  propertyWindowCallback: function(ractiveControl){
+      $("#list-rows").bind('change.bfhslider', function(ev) {
+          var items = $("#list-rows").val();
+          var formattedItems = [];
+          for (var i = 0; i < items; i++) {
 
-      $("#properties-container .buttons").change(function () {
-          var listItems = $("#properties-container .list-items").val();
-          var listLabels = listItems.split(',');
-          for(var i = 0; i < listLabels.length; i++)
-          {
-              listLabels[i] = listLabels[i].replace(/^\s*/, "").replace(/\s*$/, "");
+
+              formattedItems.push({
+                  item: ""
+              });
           }
-          ractiveControl.set("listLabels", listLabels)
-
+          ractiveControl.set("items", formattedItems);
       });
-    }
-
+  }
 };

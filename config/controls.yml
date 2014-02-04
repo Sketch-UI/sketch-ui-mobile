@@ -11,8 +11,6 @@ controls:
     display_name: Label
   CheckboxControl:
     display_name: Checkbox
-  ListControl:
-    display_name: List
   ToggleControl:
     display_name: Toggle Control
   TextboxControl:
@@ -21,3 +19,5 @@ controls:
     display_name: Button Group
   ProgressBarControl:
     display_name: Progress Bar
+  CheckboxListControl:
+    display_name: List

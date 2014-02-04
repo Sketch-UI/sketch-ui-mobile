@@ -1,8 +1,7 @@
-#controls-container li a.ListControl {
+#controls-container li a.CheckboxListControl {
   width: 200px;
   height: 50px;
-  background:  image-url('controls/NoImageControl.png');
+  background:  image-url('controls/ListControl.png');
   background-size:contain;
   background-repeat:no-repeat;
 }
-

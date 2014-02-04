@@ -1,9 +1,12 @@
-<script id='ListControl-control-template' type='text/ractive'>
- <div class='control' data-control-id='{{controlId}}' data-metadata-id='ListControl'>
-   <ul class="list" style="width: {{width}}px;">
-         {{#listLabels :i}}
-         <li class="item">{{.}}</li>
-         {{/listLabels}}
-     </div>
- </div>
+<script id='CheckboxListControl-control-template' type='text/ractive'>
+<div class='control' data-control-id='{{controlId}}' data-metadata-id='CheckboxListControl' style="width: {{width}}px;">
+    <ul class="list">
+
+        {{#items}}
+        <li class="item" style="height: {{height}}px;">
+        {{item}}
+        </li>
+        {{/items}}
+    </ul>
+</div>
 </script>
