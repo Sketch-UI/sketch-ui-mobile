@@ -23,7 +23,7 @@ var SketchesController = (function() {
         });
     };
 
-    var save = function(){
+    var save = function(callback){
         Loader.start();
 
         var controls = DrawingBoard.controls,
@@ -58,6 +58,7 @@ var SketchesController = (function() {
 
         Sketch.save({sketchId: window.location.href.substring(window.location.href.lastIndexOf('#') + 1), projectId: this.projectId, data: sketchData}, function(data){
             Loader.stop();
+            callback();
         });
     };
 

@@ -16,8 +16,10 @@ var PreviewBinding = (function() {
         var previewMode = false;
         if($("body").hasClass("preview")){
             previewMode = true;
+            SketchesController.save(function(){
+                SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), previewMode);
+            });
         }
-        SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), previewMode);
     };
 
     return {
