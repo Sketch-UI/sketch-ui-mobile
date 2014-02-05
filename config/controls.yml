@@ -21,3 +21,5 @@ controls:
     display_name: Progress Bar
   CheckboxListControl:
     display_name: List
+  LineControl:
+    display_name: Line
