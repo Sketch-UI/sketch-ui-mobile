@@ -19,7 +19,10 @@ var PreviewBinding = (function() {
             SketchesController.save(function(){
                 SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), previewMode);
             });
+        }else{
+            SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), previewMode);
         }
+
     };
 
     return {
