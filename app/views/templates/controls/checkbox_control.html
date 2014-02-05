@@ -9,10 +9,10 @@
         {{/items}}
     </div>
  <style>
- .control .checkbox input:before {
+ .control[data-control-id='{{controlId}}'] .checkbox input:before {
     border: 1px solid {{color}};
  }
- .control .checkbox input:checked:before {
+ .control[data-control-id='{{controlId}}'] .checkbox input:checked:before {
     background: {{color}};
  }
  </style>
