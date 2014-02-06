@@ -10,24 +10,36 @@ var PreviewBinding = (function() {
     };
 
     var trigger = function(){
-        $("#toolbox-left").toggle();
-        $("body").toggleClass("preview");
-
-        var previewMode = false;
+        var mode=true;
         if($("body").hasClass("preview")){
-            previewMode = true;
-            SketchesController.save(function(){
-                SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), previewMode);
-            });
+            mode = false;
+        }
+        this.set(mode);
+    };
+
+    var set = function(mode){
+        if(mode){
+            $("#toolbox-left").hide();
+            $("body").addClass("preview");
         }else{
-            SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), previewMode);
+            $("#toolbox-left").show();
+            $("body").removeClass("preview");
         }
 
+        if((window.location.href.indexOf("preview") != -1) || mode == false){
+            SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), mode);
+        }
+        else{
+         SketchesController.save(function(){
+            SketchesController.show(window.location.href.substring(window.location.href.lastIndexOf('#') + 1), mode);
+          });
+        }
     };
 
     return {
         init: init,
-        trigger: trigger
+        trigger: trigger,
+        set: set
     };
 
 })();

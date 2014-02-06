@@ -5,5 +5,4 @@ class Project
   field :width, type: String
   field :height, type: String
   field :project_id, type: String
-  field :preview_id, type: String
 end
