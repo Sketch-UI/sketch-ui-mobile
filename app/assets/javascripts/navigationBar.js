@@ -28,6 +28,7 @@ var NavigationBar = (function() {
         });
 
         $(".share-link").click(function(ev){
+            ev.preventDefault();
             $('#share-url-modal').modal("show");
             var port = "";
             if(window.location.port != ""){
