@@ -29,3 +29,5 @@ controls:
     display_name: Link Control
   ParagraphControls:
     display_name: Paragraph Control
+  CalendarControl:
+    display_name: Calendar
