@@ -47,15 +47,19 @@ input.property, select.property{
   height: 792px;
   margin: 0 auto;
   position: relative;
+  background-size: contain;
 }
 
 .iphone{
-  background: url("phone-case.png") no-repeat;
+  background: url("iphone-phone-case.png") no-repeat;
+  #drawing-board {
+    top: 62px;
+    left: 21px;
+  }
 }
 
 .android{
   background: url("nexus5-black-phone-case.png") no-repeat;
-  background-size: contain;
   #drawing-board {
     top: 44px;
   }
