@@ -43,22 +43,24 @@ input.property, select.property{
 }
 
 #phone{
-  width: 365px;
-  height: 792px;
   margin: 0 auto;
   position: relative;
   background-size: contain;
 }
 
 .iphone{
+  width: 370px;
+  height: 820px;
   background: url("iphone-phone-case.png") no-repeat;
   #drawing-board {
     top: 62px;
-    left: 21px;
+    left: 23px;
   }
 }
 
 .android{
+  width: 365px;
+  height: 792px;
   background: url("nexus5-black-phone-case.png") no-repeat;
   #drawing-board {
     top: 44px;
