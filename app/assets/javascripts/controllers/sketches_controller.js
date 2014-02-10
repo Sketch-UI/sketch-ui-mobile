@@ -58,6 +58,7 @@ var SketchesController = (function() {
 
         Sketch.save({sketchId: window.location.href.substring(window.location.href.lastIndexOf('#') + 1), projectId: this.projectId, data: sketchData}, function(data){
             Loader.stop();
+            $("#no-of-sketches").val(parseInt($("#no-of-sketches").val()) + 1);
             callback();
         });
     };

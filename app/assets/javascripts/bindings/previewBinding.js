@@ -3,8 +3,10 @@ var PreviewBinding = (function() {
     var init = function() {
         var _this = this;
         $(document).keydown(function(ev) {
-            if(ev.keyCode == 80 && ev.target.nodeName.toLowerCase() !== 'input'){
-                _this.trigger();
+            if((window.location.href.indexOf("preview") == -1)) {
+                if(ev.keyCode == 80 && ev.target.nodeName.toLowerCase() !== 'input'){
+                    _this.trigger();
+                }
             }
         });
     };

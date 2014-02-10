@@ -51,6 +51,7 @@ var DrawingBoard = (function() {
             data: initialData,
             append: true
         });
+        PageSwitchBinding.init();
     };
 
     var setupPropertyWindow = function() {

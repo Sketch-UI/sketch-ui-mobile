@@ -24,14 +24,6 @@ var Control = (function() {
 
     var positionControl = function(position){
         var control = $("#drawing-board .control").last();
-        var drawingBoardPositions = $("#drawing-board")[0].getBoundingClientRect();
-        var drawingBoardRight = 328;
-        var controlRight = position.left + control.width();
-
-        if(controlRight>drawingBoardRight){
-            position.left = position.left - (controlRight - drawingBoardRight) - 10;
-        }
-
         control.css({position: 'absolute'});
         control.css({top: position.top, left: position.left, position:'absolute'});
     };
