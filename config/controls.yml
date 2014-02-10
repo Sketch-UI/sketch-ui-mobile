@@ -25,3 +25,5 @@ controls:
     display_name: Line
   BoxControl:
     display_name: Box Control
+  LinkControl:
+    display_name: Link Control
