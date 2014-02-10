@@ -1,0 +1,17 @@
+<script id='ParagraphControls-property-template' type='text/ractive'>
+ <div class='form-group properties' data-control-id='{{controlId}}'>
+     <label>Text</label>
+     <input type="text" class="property" value="{{text}}">
+     <label>Width</label>
+     <div class="property slider-property" data-key="width" data-min="10" data-max="300"></div>
+     <label>Height</label>
+     <div class="property slider-property" data-key="height" data-min="10" data-max="200"></div>
+     <label>Alignment</label>
+     <select class="property" data-value="align">
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        <option value="center">Center</option>
+        <option value="justify">Justify</option>
+     </select>
+ </div>
+</script>

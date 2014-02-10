@@ -27,3 +27,5 @@ controls:
     display_name: Box Control
   LinkControl:
     display_name: Link Control
+  ParagraphControls:
+    display_name: Paragraph Control
