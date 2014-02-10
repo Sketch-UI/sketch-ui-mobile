@@ -23,3 +23,5 @@ controls:
     display_name: List
   LineControl:
     display_name: Line
+  BoxControl:
+    display_name: Box Control
