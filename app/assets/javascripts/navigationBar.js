@@ -37,6 +37,11 @@ var NavigationBar = (function() {
 
             $("#share-url").val("http://" + window.location.hostname + port + $(ev.currentTarget).data("href"));
         });
+
+        $("#phone-case-link").click(function(ev){
+            $("#phone").toggleClass("android");
+            $("#phone").toggleClass("iphone");
+        });
     };
 
     return {
