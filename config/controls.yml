@@ -33,3 +33,5 @@ controls:
     display_name: Calendar
   DropdownControl:
     display_name: Dropdown Control
+  TimepickerControl:
+    display_name: Time Picker Control
