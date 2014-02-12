@@ -1,0 +1,9 @@
+<script id='DropdownControl-control-template' type='text/ractive'>
+ <div class='control' data-control-id='{{controlId}}' data-metadata-id='DropdownControl'>
+   <select style="width: {{width}}px; color: {{color}}; background-color: {{bg_color}}; ">
+   {{#items}}
+    <option value={{text}}>{{text}}</option>
+  {{/items}}
+   </select>
+ </div>
+</script>
