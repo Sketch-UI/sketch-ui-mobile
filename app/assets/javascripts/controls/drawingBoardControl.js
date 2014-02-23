@@ -1,7 +1,8 @@
 window.ControlsMetadata = window.ControlsMetadata || {};
 window.ControlsMetadata['DrawingBoardControl'] = {
   initialData: {
-      bgcolor: "#ffffff"
+      bgcolor: "#ffffff",
+      phone: "iphone"
   },
   propertyWindowCallback: function(ractiveControl){
   }
