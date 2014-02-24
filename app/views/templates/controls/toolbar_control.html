@@ -2,4 +2,10 @@
  <div class='control' data-control-id='{{controlId}}' data-metadata-id='ToolbarControl' style='width: 100%;'>
     <div class="bar bar-header bar-stable" style="background-color: {{bgcolor}}; height: {{height}}px; border: none;"></div>
  </div>
+
+ <style>
+    .control[data-control-id='{{controlId}}'] .bar{
+        z-index: 0;
+    }
+ </style>
 </script>

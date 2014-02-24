@@ -1,6 +1,6 @@
 controls:
-  ToolbarControl:
-    display_name: Toolbar
+  TitlebarControl:
+    display_name: Titlebar
   ButtonControl:
     display_name: Button
   RangeControl:
