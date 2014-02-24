@@ -60,8 +60,10 @@ var DrawingBoard = (function() {
 
         var _this = this;
         $("#drawing-board").click(function(ev){
+            $(".control.active").draggable("destroy");
             $("#drawing-board .control").removeClass("active");
-            
+
+
             if(!$("body").hasClass("toolbox-left-open")){
                 return;
             }
@@ -103,8 +105,17 @@ var DrawingBoard = (function() {
             ev.stopPropagation();
             var element = $(ev.currentTarget);
 
-            $("#drawing-board .control").removeClass("active");
+            if(!ev.ctrlKey && !ev.metaKey){
+                $("#drawing-board .control").removeClass("active");
+            }
+
             element.addClass("active");
+
+            if($(".control.active").hasClass("ui-draggable")){
+                $(".control.active").draggable("destroy");
+            }
+
+            $(".control.active").multiDraggable({ containment: "parent", cancel: null ,group: $(".control.active")});
 
             if(!$("body").hasClass("toolbox-left-open")){
                 return;
