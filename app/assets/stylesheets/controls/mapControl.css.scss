@@ -1,0 +1,11 @@
+#controls-container li a.MapControl {
+  width: 200px;
+  height: 50px;
+  background:  image-url('controls/MapControl.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+.map-image{
+  background: image-url('map.png');
+}
