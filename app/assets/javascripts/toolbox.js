@@ -31,15 +31,22 @@ var Toolbox = (function() {
                 if(ControlsMetadata[metadataId].groupControl){
                     var controls = ControlsMetadata[metadataId].controls;
                     for(var i=0; i<controls.length; i++){
-                        position.top = position.top + controls[i].position.top;
-                        position.left = position.left + controls[i].position.left;
+                        var updated_position = {
+                            top: position.top + controls[i].position.top,
+                            left: position.left + controls[i].position.left
+                        }
+
                         var data = jQuery.extend(true, {}, controls[i].data);
 
-                        DrawingBoard.addControl(controls[i].metadataId, position, data, false);
+                        DrawingBoard.addControl(controls[i].metadataId, updated_position, data, false, false);
                     }
+                    if($(".control.active").hasClass("ui-draggable")){
+                        $(".control.active").draggable("destroy");
+                    }
+                    $(".control.active").multiDraggable({ containment: "parent", cancel: null ,group: $(".control.active")});
                 }
                 else{
-                    DrawingBoard.addControl(metadataId, position, null, false);
+                    DrawingBoard.addControl(metadataId, position, null, false, true);
                 }
 
 

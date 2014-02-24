@@ -1,6 +1,8 @@
 controls:
   TitlebarControl:
     display_name: Titlebar
+  BottomBarControl:
+    display_name: Bottombar
   ButtonControl:
     display_name: Button
   RangeControl:

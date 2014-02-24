@@ -40,7 +40,7 @@ window.ControlsMetadata['TitlebarControl'] = {
       {
           metadataId: "LabelControl",
           position: {
-              left: -170,
+              left: 120,
               top: 0
           },
           data: {

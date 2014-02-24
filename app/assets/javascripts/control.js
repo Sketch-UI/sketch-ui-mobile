@@ -1,6 +1,6 @@
 var Control = (function() {
 
-    var create = function(metadataId, position, data, previewMode) {
+    var create = function(metadataId, position, data, previewMode, unselect) {
         var controlData = new Ractive({
             el: "drawing-board",
             template: "#" + metadataId + "-control-template",
@@ -16,7 +16,7 @@ var Control = (function() {
         this.positionControl(position);
 
         if(!previewMode){
-            this.bindControl();
+            this.bindControl(unselect);
         }
 
         return controlData;
@@ -28,10 +28,12 @@ var Control = (function() {
         control.css({top: position.top, left: position.left, position:'absolute'});
     };
 
-    var bindControl = function(){
+    var bindControl = function(unselect){
         var control = $("#drawing-board .control").last();
         control.draggable({ containment: "parent", cancel: null});
-        $("#drawing-board .control").removeClass("active");
+        if(unselect){
+            $("#drawing-board .control").removeClass("active");
+        }
         control.addClass("active");
     };
 

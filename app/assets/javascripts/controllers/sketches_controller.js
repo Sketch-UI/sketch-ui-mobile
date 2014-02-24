@@ -17,7 +17,7 @@ var SketchesController = (function() {
                         left: parseInt(data.controls_data[i].position.left)
                     }
 
-                    DrawingBoard.addControl(data.controls_data[i].type, postion, data.controls_data[i].properties, previewMode);
+                    DrawingBoard.addControl(data.controls_data[i].type, postion, data.controls_data[i].properties, previewMode, true);
                 }
             }
         });

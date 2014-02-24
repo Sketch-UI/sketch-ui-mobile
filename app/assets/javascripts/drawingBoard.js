@@ -79,13 +79,13 @@ var DrawingBoard = (function() {
 
     };
 
-    var addControl = function(metadataId, position, data, previewMode) {
+    var addControl = function(metadataId, position, data, previewMode, unselect) {
         this.controlId = this.controlId + 1;
         if(!data){
             data = jQuery.extend(true, {}, ControlsMetadata[metadataId].initialData);
         }
         data["controlId"] = this.controlId;
-        this.controls[this.controlId] = Control.create(metadataId, position, data, previewMode);
+        this.controls[this.controlId] = Control.create(metadataId, position, data, previewMode, unselect);
         var tempHistory = $("#drawing-board").html();
         this.historyIndex = this.historyIndex+1;
         historyTracker[this.historyIndex]= tempHistory;
