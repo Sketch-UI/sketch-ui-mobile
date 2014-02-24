@@ -30,9 +30,7 @@ var Control = (function() {
 
     var bindControl = function(){
         var control = $("#drawing-board .control").last();
-        controlDraggable = new Draggabilly(control[0], {
-            containment: '#drawing-board'
-        });
+        control.draggable({ containment: "parent", cancel: null  });
         $("#drawing-board .control").removeClass("active");
         control.addClass("active");
     };

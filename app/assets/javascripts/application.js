@@ -9,7 +9,6 @@
 //= require picker/picker
 //= require picker/picker.date
 //= require picker/legacy
-//= require draggabilly/draggabilly
 //= require sidr/jquery.sidr.min
 //= require formhelpers/bootstrap-formhelpers
 //= require_tree .
