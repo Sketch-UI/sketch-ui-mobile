@@ -25,7 +25,24 @@ var Toolbox = (function() {
                     top: ui.position.top - drawingBoardPositions.top,
                     left: ui.position.left - drawingBoardPositions.left
                 }
-                DrawingBoard.addControl($(ui.draggable).data("metadata-id"), position, null, false);
+
+                var metadataId = $(ui.draggable).data("metadata-id");
+
+                if(ControlsMetadata[metadataId].groupControl){
+                    var controls = ControlsMetadata[metadataId].controls;
+                    for(var i=0; i<controls.length; i++){
+                        position.top = position.top + controls[i].position.top;
+                        position.left = position.left + controls[i].position.left;
+                        var data = jQuery.extend(true, {}, controls[i].data);
+
+                        DrawingBoard.addControl(controls[i].metadataId, position, data, false);
+                    }
+                }
+                else{
+                    DrawingBoard.addControl(metadataId, position, null, false);
+                }
+
+
                 _this.showPropertyWindow();
             }
         });
