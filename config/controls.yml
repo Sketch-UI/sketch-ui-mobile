@@ -39,3 +39,5 @@ controls:
     display_name: Time Picker Control
   MapControl:
     display_name: Map
+  ListItemControl:
+    display_name: List Items
