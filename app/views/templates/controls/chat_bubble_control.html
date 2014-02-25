@@ -1,0 +1,47 @@
+<script id='ChatBubbleControl-control-template' type='text/ractive'>
+ <div class='control' data-control-id='{{controlId}}' data-metadata-id='ChatBubbleControl'>
+ <div class="bubble" style="color: {{text_color}}; background-color:{{bg_color}}; border-color: rgb(127, 127, 127);  top: 150px;  border-width: 0px;">
+        {{caption}}
+		<div class="pointer" style="content: '';
+		                            position: absolute;
+		                            border-style: solid;
+		                            border-color:
+		                            transparent {{bg_color}};
+		                            display: block;
+		                            width: 0;
+		                            z-index: 1;
+		                            {{#right_bubble}}
+		                                right: -5px;
+		                                border-width: 7px 0 7px 16px;
+                                    {{/right_bubble}}
+                                    {{^right_bubble}}
+		                                left: -5px;
+		                                border-width: 7px 16px 7px 0;
+                                    {{/right_bubble}}
+                                    {{#top_pointer}}
+                                        top: 10px;
+                                    {{/top_pointer}}
+                                    {{^top_pointer}}
+                                        bottom: 10px;
+                                    {{/top_pointer}}
+
+
+
+		                            ">
+		</div>
+		<div class="pointerBorder" style="display: none">
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+
+	</div>
+
+ </div>
+</script>

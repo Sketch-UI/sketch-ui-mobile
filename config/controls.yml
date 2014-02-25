@@ -41,3 +41,5 @@ controls:
     display_name: Map
   ListItemControl:
     display_name: List Items
+  ChatBubbleControl:
+    display_name: Chat Bubble
