@@ -3,22 +3,35 @@ var CopyPasteBinding = (function() {
     var init = function() {
         Mousetrap.bind(['command+c', 'ctrl+c'], function(e) {
             if($(".control.active").length > 0){
-                window.controlClipBoard = {
-                    properties: DrawingBoard.controls[$(".control.active").data("control-id")].get(),
-                    metadataId: $(".control.active").data("metadata-id")
+                var copiedControls = [];
+
+                for(var i=0; i<$(".control.active").length; i++){
+                    var control = $($(".control.active")[i]);
+
+                    copiedControls.push({
+                        properties: DrawingBoard.controls[control.data("control-id")].get(),
+                        metadataId: control.data("metadata-id"),
+                        position: control.position()
+                    })
                 }
+
+                window.controlClipBoard = copiedControls
             }
             return false;
         });
 
         Mousetrap.bind(['command+v', 'ctrl+v'], function(e) {
             if(window.controlClipBoard){
-                var position = {
-                    left: 0,
-                    top: 0
+                $(".control").removeClass("active");
+                for(var i=0; i<window.controlClipBoard.length; i++){
+                    var control = window.controlClipBoard[i];
+                    var data = control.properties;
+                    var position = {
+                        left: control.position.left + 5,
+                        top: control.position.top + 25
+                    }
+                    DrawingBoard.addControl(control.metadataId, position, jQuery.extend(true, {}, data), false, false);
                 }
-                var data = window.controlClipBoard.properties;
-                DrawingBoard.addControl(window.controlClipBoard.metadataId, position, jQuery.extend(true, {}, data), false, true);
             }
             return false;
         });
