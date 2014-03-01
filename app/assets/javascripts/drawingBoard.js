@@ -38,6 +38,7 @@ var DrawingBoard = (function() {
             $("#drawing-board").html(historyTracker[_this.historyIndex]);
         });
         Toolbox.showControlWindow();
+        CopyPasteBinding.init();
     };
 
     var create = function() {

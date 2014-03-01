@@ -12,6 +12,7 @@
 //= require picker/legacy
 //= require sidr/jquery.sidr.min
 //= require formhelpers/bootstrap-formhelpers
+//= require mousetrap/mousetrap
 //= require_tree .
 
 $(document).ready(function() {
