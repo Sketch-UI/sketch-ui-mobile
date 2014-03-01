@@ -1,6 +1,7 @@
 <script id='DrawingBoardControl-property-template' type='text/ractive'>
   <div class='form-group properties' data-control-id='{{controlId}}'>
-   <label>Standard Background</label>
+    <label>Standard Background</label>
+
     <div class="btn-group standard-color-picker" data-value="bgcolor">
         <button type="button" class="btn btn-default" data-color="#f3f1f0"></button>
         <button type="button" class="btn btn-default" data-color="#33465d"></button>
@@ -10,12 +11,18 @@
         <button type="button" class="btn btn-default" data-color="#000000"></button>
         <button type="button" class="btn btn-default" data-color="#ffffff"></button>
     </div>
-   <label>Custom Background</label>
-   <input type="text" class="property color-property" value="{{bgcolor}}"/>
-   <label>Phone</label>
+    <label>Custom Background</label>
+    <input type="text" class="property color-property" value="{{bgcolor}}"/>
+    <label>Phone</label>
     <select class="property" data-value="phone">
         <option value="iphone">Iphone</option>
         <option value="android">Android</option>
-     </select>
+    </select>
+    <label>Layers</label>
+    <ul id="sortable">
+        {{#layers}}
+        <li class="ui-state-default" value="{{controlId}}">{{metadataId}}</li>
+        {{/layers}}
+    </ul>
   </div>
 </script>

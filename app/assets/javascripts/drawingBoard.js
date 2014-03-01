@@ -91,6 +91,13 @@ var DrawingBoard = (function() {
         this.historyIndex = this.historyIndex+1;
         historyTracker[this.historyIndex]= tempHistory;
 
+        var layers = this.controls[1].get("layers");
+        for(var i=layers.length; i>0;i--){
+            layers[i] = layers[i-1];
+        }
+        layers[0]= {metadataId: metadataId, controlId: this.controlId};
+        this.controls[1].set("layers",layers);
+
         if(!previewMode){
             this.bindDeleteControl(this.controlId);
             this.activePropertyWindow = PropertyWindow.create(metadataId, this.controls[this.controlId].get(), this.controls[this.controlId]);

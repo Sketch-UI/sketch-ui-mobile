@@ -13,7 +13,7 @@ var Control = (function() {
             control.prepend("<div class='actions'><span class='delete'>X</span></div>")
         }
 
-        this.positionControl(position);
+        this.positionControl(position, data);
 
         if(!previewMode){
             this.bindControl(unselect);
@@ -22,10 +22,11 @@ var Control = (function() {
         return controlData;
     };
 
-    var positionControl = function(position){
+    var positionControl = function(position, data){
         var control = $("#drawing-board .control").last();
         control.css({position: 'absolute'});
         control.css({top: position.top, left: position.left, position:'absolute'});
+        control.css({'z-index': data["controlId"]});
     };
 
     var bindControl = function(unselect){

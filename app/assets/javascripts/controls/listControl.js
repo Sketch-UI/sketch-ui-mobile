@@ -17,7 +17,6 @@ window.ControlsMetadata['CheckboxListControl'] = {
           var formattedItems = [];
           for (var i = 0; i < items; i++) {
 
-
               formattedItems.push({
                   item: ""
               });
