@@ -43,3 +43,5 @@ controls:
     display_name: List Items
   ChatBubbleControl:
     display_name: Chat Bubble
+  KeyboardControl:
+    display_name: Keyboard
