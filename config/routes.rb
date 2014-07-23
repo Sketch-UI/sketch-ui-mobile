@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 SketchUi::Application.routes.draw do
-  root 'home#index'
+  root 'projects#create'
 
   resource :projects, only: [:create]
   get "projects/:id" => "projects#show"
