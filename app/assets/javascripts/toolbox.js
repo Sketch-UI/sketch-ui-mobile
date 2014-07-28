@@ -13,6 +13,8 @@ var Toolbox = (function() {
         this.bindControls();
 
         $("#controls-container ul li a").draggable({ helper:'clone'});
+
+        $.sidr('open', 'toolbox-left');
     };
 
     var bindControls = function() {
