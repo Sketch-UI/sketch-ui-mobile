@@ -29,10 +29,6 @@ controls:
     display_name: Box Control
   LinkControl:
     display_name: Link Control
-  ParagraphControls:
-    display_name: Paragraph Control
-  CalendarControl:
-    display_name: Calendar
   DropdownControl:
     display_name: Dropdown Control
   TimepickerControl:
