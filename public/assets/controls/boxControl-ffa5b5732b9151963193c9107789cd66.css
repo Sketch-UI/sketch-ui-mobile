@@ -1,0 +1,6 @@
+#controls-container li a.BoxControl {
+  width: 200px;
+  height: 50px;
+  background: url(/assets/controls/BoxControl.png);
+  background-size: contain;
+  background-repeat: no-repeat; }

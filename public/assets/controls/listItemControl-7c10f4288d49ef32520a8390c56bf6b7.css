@@ -1,0 +1,6 @@
+#controls-container li a.ListItemControl {
+  width: 200px;
+  height: 50px;
+  background: url(/assets/controls/ListItemControl.png);
+  background-size: contain;
+  background-repeat: no-repeat; }

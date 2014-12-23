@@ -1,0 +1,6 @@
+#controls-container li a.ButtongroupControl {
+  width: 200px;
+  height: 50px;
+  background: url(/assets/controls/ButtonGroupControl.png);
+  background-size: contain;
+  background-repeat: no-repeat; }

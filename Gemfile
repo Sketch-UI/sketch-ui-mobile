@@ -5,6 +5,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'magic_encoding'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+gem 'okta_saml'
+#gem 'devise'
+gem 'mongoid-autoinc'
 
 group :assets do
   gem 'uglifier', '>= 1.3.0'

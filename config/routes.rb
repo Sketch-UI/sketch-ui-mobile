@@ -1,5 +1,10 @@
 # -*- encoding : utf-8 -*-
 SketchUi::Application.routes.draw do
+  #devise_scope :user do
+  #  get '/login', :to => 'devise/sessions#new', :as => :login
+  #  get '/logout', :to => 'devise/sessions#destroy', :as => :logout
+  #end
+  #devise_for :users, :sign_out_via => :get
   root 'projects#create'
 
   resource :projects, only: [:create]

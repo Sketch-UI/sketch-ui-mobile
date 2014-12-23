@@ -1,0 +1,6 @@
+#controls-container li a.LabelControl {
+  width: 200px;
+  height: 50px;
+  background: url(/assets/controls/labelControl.png);
+  background-size: contain;
+  background-repeat: no-repeat; }

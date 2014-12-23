@@ -1,0 +1,96 @@
+body {
+  background-color: lightgray !important; }
+
+#toolbox {
+  padding: 25px;
+  position: relative; }
+
+#properties-container {
+  padding: 15px; }
+  #properties-container .slider-property {
+    width: 230px; }
+
+input.property, select.property, textarea.property {
+  background-color: #ffffff !important;
+  color: #000000 !important; }
+
+input.property, select.property {
+  max-height: 30px !important; }
+
+#controls-container ul li {
+  padding-bottom: 10px; }
+
+#controls-container ul li a {
+  margin: auto; }
+
+#controls-container ul li a:hover {
+  box-shadow: none; }
+
+#controls-container ul li label {
+  margin-left: 10px;
+  margin-bottom: 5px; }
+
+#phone {
+  margin: 0 auto;
+  position: relative;
+  background-size: contain; }
+
+.iphone {
+  width: 370px;
+  height: 820px;
+  background: url("iphone-phone-case.png") no-repeat; }
+  .iphone #drawing-board {
+    top: 62px;
+    left: 23px; }
+
+.android {
+  width: 365px;
+  height: 792px;
+  background: url("nexus5-black-phone-case.png") no-repeat; }
+  .android #drawing-board {
+    top: 44px; }
+
+#drawing-board {
+  width: 328px;
+  height: 576px;
+  top: 84px;
+  left: 18px;
+  position: absolute;
+  z-index: 100;
+  background-color: #ffffff;
+  margin: 25px auto; }
+  #drawing-board .control {
+    padding: 5px; }
+    #drawing-board .control.active {
+      border: 1px dashed #000; }
+      #drawing-board .control.active .actions {
+        display: block;
+        width: 10px;
+        float: right;
+        position: relative;
+        height: 10px;
+        margin-top: -25px;
+        margin-right: -20px; }
+        #drawing-board .control.active .actions span {
+          font-size: 10px;
+          font-weight: bold;
+          color: red;
+          cursor: default; }
+    #drawing-board .control .actions {
+      display: none; }
+
+.standard-color-picker {
+  margin-bottom: 20px; }
+  .standard-color-picker button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-image: none;
+    border-radius: 0; }
+
+body:not(.preview) #drawing-board .control * {
+  cursor: move; }
+
+.toolbox-tab-container {
+  overflow-y: scroll;
+  height: 100%; }

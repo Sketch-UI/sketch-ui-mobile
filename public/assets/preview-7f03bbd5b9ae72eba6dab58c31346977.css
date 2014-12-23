@@ -1,0 +1,32 @@
+.preview {
+  background-color: lightgray !important;
+  position: static !important;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+  .preview #phone {
+    margin-top: 20px; }
+    .preview #phone #drawing-board {
+      box-shadow: none !important;
+      background: none; }
+    .preview #phone #left-page-button {
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-right: 20px solid #000000;
+      position: absolute;
+      left: -50px;
+      top: 300px; }
+    .preview #phone #right-page-button {
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 20px solid #000000;
+      position: absolute;
+      right: -50px;
+      top: 300px; }
+  .preview #header {
+    display: none !important; }
+  .preview #toolbox-left {
+    display: none !important; }
